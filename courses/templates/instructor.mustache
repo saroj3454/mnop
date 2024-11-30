@@ -1,0 +1,276 @@
+
+
+{{!
+  This file is part the Local Analytics plugin for Moodle
+
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+  @template local_catalogue/cataloguecoursedetails
+
+  Template is used to show the list of course category.
+
+  Classes required for JS:
+  * none
+
+  Data attributes required for JS:
+  * none
+
+  Context variables required for this template:
+  * Many more to come 
+
+  Example context (json):
+  { "siteid": UA-90210-15, "addition": 2, }
+}}
+<!-- Course details page -->
+{{>local_courses/courseheader}}
+
+<section class="my-5 pt-5">
+  <div class="container">
+    <div class="row">
+     <div class="col-md-2">
+       <div class="user-profile">
+         <img src="https://www.vrtuz.com//local/courses/images/head.png" class="img-fluid">
+       </div>
+     </div>
+     <div class="col-md-5">
+          <div class="col-md-12">
+            <div class="user-info">
+              <br>
+              {{#totals}}
+               <h2>{{tutor_name}}</h2>
+               {{/totals}}
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit </p>
+               
+             </div>
+          </div>
+            <div class="container">
+                 <div class="row">
+                   <div class="col-md-6">
+                    <div class="user-info">
+                        {{#totals}}
+                       <p>No. of enrolled student <span>{{total_learner}}</span></p>
+                        {{/totals}}
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="user-info">
+                       {{#totals}}
+                       <p>No. of enrolled courses <span>{{total_course}}</span></p>
+                        {{/totals}}
+                     </div>
+                  </div>
+                 </div>
+            </div>
+     </div>
+   </div>
+ </div>
+</section>
+{{#tutordetails}}
+{{#tutorprofile}}
+<section class="pt-5 pb-5 bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tutor-box">
+          <div class="heading">
+            <h2>TUTOR PROFILE</h2>
+          </div>
+          <div class="tutr-profile">
+            {{{ tutorprofile }}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{/tutorprofile}}
+
+{{#education}}
+<section class="pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="certificates">
+          <div class="heading">
+            <h2>EDUCATION</h2>
+          </div>
+          <div class="tutr-educa">
+           {{{ education }}}
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+{{/education}}
+
+{{#certifications}}
+<section  class="bg-gray pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tutor-box education-box">
+          <div class="heading">
+            <h2>CERTIFICATIONS</h2>
+          </div>
+          <div class="tutr-educa">
+           {{{ certifications }}}
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+{{/certifications}}
+
+{{#teachingexperience}}
+<section class="pt-5 pb-5" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="teaching-box">
+          <div class="heading">
+            <h2>TEACHING EXPERIENCE</h2>
+          </div>
+          <div class="experience-list">
+           {{{ teachingexperience }}}
+         </div>
+
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+{{/teachingexperience}}
+
+{{#otherworkexperiences}}
+<section  class="bg-gray pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="teaching-box">
+          <div class="heading">
+            <h2>OTHER WORK EXPERIENCES</h2>
+          </div>
+          <div class="work_experience-list">
+            {{{ otherworkexperiences }}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{/otherworkexperiences}}
+{{/tutordetails}}
+
+<section  class="pt-5 pb-5 intructor" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="teaching-box">
+          <div class="heading">
+            <h2>MY COURSES</h2>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-md-12"> 
+       <div class="row owl-carousel carousel-main" data-wrap="false" id="hover_zindex">
+          {{#noofcourses}}
+          <div class="col-md-12 mb-5">
+            <a href="{{coursedetails}}">
+                <div class="course_section tooltip_hover">
+                  {{#courseimage}}<img src="{{courseimage}}" class="" width="250">{{/courseimage}}
+                  <div class="tooltip_content tooltip_mobile">
+                    <a class="vrz_heading">{{{fullname}}}</a><br>
+                    <div class="best">
+                      <div class="best_text"> Bestseller</div>
+                      <span class="vritle">Updated<span class="vritle_xs"> {{update_date}}</span></span>
+
+                    </div>
+                    <div class="vrzite-text"><span> {{level}} </span></div>
+                    <div class="vrt_content">{{{summary}}}</div>
+                    {{! <div class="">
+                      <ul class="vrt block-list">
+                        <li><div class="vrt list-item"><span class="udlite-block-list-item-content">Master Machine Learning on Python &amp; R</span></div></li>
+                        <li><div class="vrt list-item"><span class="udlite-block-list-item-content">Have a great intuition of many Machine Learning models</span></div></li>
+                        <li><div class="vrt list-item"><span class="vrtitem-content">Make accurate predictions</span></div></li>
+                      </ul>
+                    </div> }}
+                    <div class="course-details" align="center"><a href="{{enroll}}" class=" btn btn-rose black-hover">Enroll Now</a></div>
+                  </div>
+
+                  <h5 class="h5 text-left my-3 coursename">{{{fullname}}}</h5>
+                  {{#teachers}}
+                  <label class="teacher"><a href="{{{user_url1}}}" target="_blank">{{teacher_name}}</a></label>
+                  {{/teachers}}
+                  <!-- <p class="course_description">{{{summary}}}</p> -->
+                  <!-- <p class="course_highlights"></p> -->
+                  <p class="total_enrolled"> <strong> Enrolled Students : </strong> {{enrollStudent}}</p>
+                  <div class=" right">
+                    <span>Price:&nbsp;{{course_price}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{enroll}}" class=" btn btn-rose black-hover">Enroll Now</a>
+                  </div>
+                </div>
+            </a>
+          </div>
+          {{/noofcourses}}
+         
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+
+<section  class="bg-gray pt-5 pb-5 intructor_blog">
+  <div class="container">
+    <div class="row owl-carousel carousel-main" data-wrap="false" id="hover_zindex">
+      <div class="col-md-12">
+        <div class="teaching-box">
+          <div class="heading">
+            <h2>MY BLOGS</h2><br>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div  class="row owl-carousel carousel-main" data-wrap="false">
+       {{#blogs}}
+      <div class="col-md-12">
+      <div class="course_section">
+        <a href="{{blogdetails}}" title="{{{blog_title}}}">
+          <img src="{{blog_image}}" class="courseimage" width="250">
+          <div class="category_caption p-2">
+            <h6 class="h5 text-left my-3 coursename">{{{blog_title}}}</h6>
+            <p class="course_highlights">{{{summary}}}</p>
+            <p class="course_description">{{author_name}}</p>
+            <p class="course_description">{{categoryname}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+      {{/blogs}}
+    </div>
+  </div>
+</section>
+<script>
+/*window.addEventListener("contextmenu", function(event){
+event.preventDefault();
+alert('Right Click is Disabled');    
+}, false);
+</script>*/
+
+{{>local_courses/coursefooter}}

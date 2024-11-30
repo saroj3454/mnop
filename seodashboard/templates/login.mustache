@@ -1,0 +1,128 @@
+ <div class="container">
+        <div class="item-container">
+            <h2 class="log-in">Login With</h2>
+        </div>
+        <div class="item-container">
+            <a href="{{root}}/auth/oauth2/login.php?id=10&wantsurl=%2F&sesskey={{sesskey}}">
+            <button>
+            <i class="fab fa-google"></i>   
+            </button></a>
+            <a href="{{root}}/auth/oauth2/login.php?id=11&wantsurl=%2F&sesskey={{sesskey}}">
+            <button>
+            <i class="fab fa-facebook-f"></i>
+            </button>
+            </a>
+        </div>
+        <div class="item-container">
+            <p>Or Login using Email/User Name</p>
+        </div>
+        <form name="Login" action="{{root}}/login/index.php" method="post">
+            <div class="form-input">
+                <label for="email" class="label">Email/User Name</label>
+                <input type="text" name="username" required="true">
+                
+            </div>
+            <div class="form-input">
+                <label for="password" class="label">Password</label>
+                <input type="password" name="password" required="true">
+            </div>
+            <div class="display-space-between">
+                <div>
+                    <input type="checkbox" checked>
+                    <label for="password" class="chekbox-label">Remember Me</label>
+                </div>
+                <div>
+                    <a href="{{root}}/login/forgot_password.php">Forgot password?</a>
+                </div>
+            </div>
+            <div>
+                <button type="submit" >Login</button>
+            </div>
+        </form>
+        </div>
+        
+         <div class="wrapper">
+   <div class="or-separator">
+     <div class="vertical-line"></div>
+     <div>Or</div>
+     <div class="vertical-line"></div>
+   </div>
+ </div>
+ 
+        <div class="container">
+        <div class="item-container">
+            <h2 class="log-in">Create an Account</h2>
+        </div>
+    <form name="Registration" class="formclass" id="registerform" method="post" action="{{{root}}}/local/seodashboard/auth.php" autocomplete="off">
+            <input type='hidden' name='action' value="registerauth">
+            <input type='hidden' name='token' value="{{{sesskey}}}">
+            <div class="form-input">
+                <label for="" class="label">Full Name</label>
+        <input type="text" name="fullname" required="true" value="{{#postdata.fname}}{{postdata.fname}}{{/postdata.fname}}{{#postdata.lname}} {{postdata.lname}}{{/postdata.lname}}">
+                <span class="error" id="fullnameerror">{{postdata.fullnameerror}}</span>
+                </div>
+            <div class="form-input">
+                <label for="" class="label">User Name</label>    
+            <input type="text" autocomplete="false" name="username" required="true"  id="username" value="{{postdata.username}}" >
+                <span class="error" id="usernameerror">{{postdata.errorusername}}</span>
+            </div>
+            <div class="form-input">
+                <label for="email" class="label">Email</label>
+                <input type="text" name="email" value="{{postdata.email}}">
+                <span class="error" id="emailerror">{{postdata.emailerror}}</span>
+            </div>
+            <div class="form-input">
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" name="password" value="{{postdata.password}}">   
+                <span class="error" id="passworderror"></span>
+            </div>
+            <div class="form-input">
+                <label for="password" class="label">Confirm Password</label>
+                <input type="password" id="confirm_pw" name="confirm_password" value="{{postdata.cpassword}}" autocomplete="new-password">
+                <i class="fas fa-eye-slash show"></i>
+                <span class="error" id="confirm_passworderror">{{postdata.passworderror}}</span>
+                
+            </div>
+        
+            <div>
+                <button type="submit" id="registerbutton">Register</button>
+            </div>
+        </form>
+        </div>
+
+<script>
+	const createPw = document.querySelector("#password"),
+ confirmPw = document.querySelector("#confirm_pw"),
+ pwShow = document.querySelector(".show"),
+ alertIcon = document.querySelector(".error"),
+ alertText= document.querySelector(".text"),
+ submitBtn = document.querySelector("#button");
+ pwShow.addEventListener("click", ()=>{
+   if((createPw.type === "password") && (confirmPw.type === "password")){
+     createPw.type = "text";
+     confirmPw.type = "text";
+     pwShow.classList.replace("fa-eye-slash","fa-eye");
+   }else {
+     createPw.type = "password";
+     confirmPw.type = "password";
+     pwShow.classList.replace("fa-eye","fa-eye-slash");
+   }
+  
+ });
+ function errorMessage(){
+ 	var error=document.getElementById("error")
+ 	if(isNaN(document.getElementById("username").value)){
+ 		error.textContent="Field Canot be Empty"
+ 		error.style.color="red"
+ 	}else{
+ 		error.textContent=""
+ 	}
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+</script>
+    

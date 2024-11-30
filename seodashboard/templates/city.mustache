@@ -1,0 +1,64 @@
+{{{style}}}
+<style type="text/css">
+   .sucessdata {
+    position: fixed;
+    background: #21f707;
+    right: 159px;
+    z-index: 9999999;
+    padding-right: 100px;
+    line-height: 27px;
+    text-align: left;
+    padding-left: 11px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+</style>
+
+<section city>
+
+{{{adstae}}}
+
+<div class="frow">
+   <div class='bcol-md-9'>
+      <div class="mmform d_flex">
+         <label for="category">FiLter State</label>
+         <select class="m_fcontrol" allstate>
+            <option value="" disabled selected hidden >Select category</option>
+          
+         </select>
+      </div>
+
+
+      <div class="mmform d_flex">
+         <label for="category">Select City & District</label>
+         <select  class="m_fcontrol" action>
+            
+            <option value="city">City</option>
+            <option value="district">District</option>
+         
+         </select>
+      </div>
+
+{{#thirdcategory}} 
+      <div class="mmform d_flex">
+         <label for="category">Third Category</label>
+         <select class="m_fcontrol" filterthirdcategory>
+           {{{thirdcategory}}}
+         </select>
+      </div>
+{{/thirdcategory}}
+
+
+   </div>
+   <div class='bcol-md-3 pdt8'>
+      {{{addbutton}}}
+   </div>
+</div>
+
+
+<div id="sucessmessage" style="display: none;"><div class="sucessdata">Deleted Sucessfully...</div></div>
+
+<div id='datashow'></div>
+
+</section>

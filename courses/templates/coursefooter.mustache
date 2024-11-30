@@ -1,0 +1,367 @@
+ <style type="text/css">
+                .footer-form .form-control {
+                text-align: left;
+                height: 35px;
+            }
+            .footer-form .txt{
+                height: 80px;
+            }
+            .footer-form .btn{
+                height: 35px;
+            }
+            .bottom-footer{
+                text-align: center;
+            }
+.foo-socials a.ico-facebook:hover {
+    color: rgb(59, 89, 152)!important;
+    color:red;
+}
+
+            </style>
+            <style>span#mail-status {
+    color: #06b142;
+}
+</style>
+
+        
+                
+                    <!-- FOOTER-2
+            ============================================= -->
+           <footer id="footer-2" class="footer division">
+                <div class="container">
+                    <!-- FOOTER CONTENT -->
+                    <div class="row">
+                        <!-- FOOTER INFO -->
+                        <div class="col-md-5 col-lg-5 col-xl-4">
+                            <div class="footer-info mb-40">
+                             <a href="{{{ config.wwwroot }}}" class="logo-black {{# output.get_footer_logo }}has-logo{{/ output.get_footer_logo }}
+                                    {{^ output.get_footer_logo }}
+                                        d-none d-sm-inline
+                                    {{/ output.get_footer_logo }}
+                                         " style="width: 150px; text-align: center;">
+                                    {{# output.get_footer_logo }}
+                                        <span class="logo d-none1 d-sm-inline">
+                                            <img src="{{output.get_footer_logo}}" alt="{{sitename}}">
+                                        </span>
+                                    {{/ output.get_footer_logo }}
+                                    {{^ output.get_footer_logo }}
+                                      <span class="site-name d-none d-md-inline">{{{ sitename }}}</span>
+                                    {{/ output.get_footer_logo }}
+                            </a>
+                                <!-- Text -->   
+                                
+                                <p style="text-align: justify;">{{{getintouchcontent}}}</p>
+                            
+                            </div>  
+                        </div>  
+
+                        <!-- FOOTER PRODUCTS LINKS -->
+                        <div class="col-md-3 col-lg-3 col-xl-2">
+                            <div class="footer-links mb-40">
+                                <!-- Title -->
+                              <h5 class="h5-md">Quick Links</h5>
+                                
+                                <!-- Footer Links -->
+                                <ul class="foo-links clearfix">
+                                    <li><a href="{{{ config.wwwroot }}}/local/courses/aboutus.php">About VRTUZ </a></li>
+                                    <li><a href="">Our Testimonials</a></li>
+                                    {{! <li><a href="">Premium Learning</a></li> }}
+                                    <li><a href="{{{ config.wwwroot }}}/local/blogs/blog.php">From the Blog</a></li>      
+                                    <li><a href="{{{ config.wwwroot }}}/local/courses/become-a-tutor.php#menu1">Live Virtual Classes</a></li>
+                                    <li><a href="{{{ config.wwwroot }}}/brochure/vrtuz brochure.pdf" target="_blank">Brochure</a></li>
+                                    <li><a href="{{{ config.wwwroot }}}/local/courses/index.php"><span style="font-weight: bold; font-size: 20px;">ALL COURSES</span></a></li>                                                              
+                                                                 
+                                </ul>
+
+                            </div>
+                        </div>
+                        <!-- FOOTER COMPANY LINKS -->
+                        <div class="col-md-4 col-lg-4 col-xl-3">
+                            <div class="footer-links mb-40">
+                                <!-- Title -->
+                                <h5 class="h5-md">About US</h5>
+                                <!-- Footer Links -->
+                                <div class="container">
+                                <ul class="clearfix">
+                                    <li><a href="https://blive.vrtuz.com" >Meetings/Conferences/Webinars </a></li>
+                                    <li><a href="{{{ config.wwwroot }}}/local/courses/institutions.php">Institutions</a></li>
+                                    <li><a href="{{{ config.wwwroot }}}/local/courses/tutors.php">Tutors</a></li> 
+                                    <li><a href="{{{ config.wwwroot }}}/resources#term">Terms & Conditions</a></li>
+                                    <li><a href="https://vrtuzsupport.tawk.help/">Help & Support</a></li>                
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- FOOTER NEWSLETTER FORM -->
+                        <div class="col-md-7 col-xl-3">
+                            <div class="footer-form mb-20">
+                                <!-- Title -->
+                               <h5 class="h5-md">Contact Us/Feedback </h5>
+                                <!-- Newsletter Form Input -->
+                                <form id="contactform" class="newsletter-form" action="" method="post">
+                                    <span id="contactName-info" class="info"></span>
+                                    <div class="input-group">
+
+                                    <input type="text" autocomplete="off" class="form-control inp_contact" placeholder="Your Fullname" required id="s_name">
+                                    </div>
+
+                                    <span id="contactEmail-info" class="info"></span>
+                                    <div class="input-group">       
+                                    <input type="email" autocomplete="off" class="form-control inp_contact" placeholder="Your Email Address" required id="s_email">
+                                    </div>
+
+                                    <span id="contactSubject-info" class="info"></span>
+                                    <div class="input-group">
+                                      <input type="text" autocomplete="off" class="form-control inp_contact" placeholder="Your Subject" required id="s_subject">
+                                    </div>
+
+                                    <span id="contactMessage-info" class="info"></span>
+                                    <div class="input-group">
+                                    <textarea autocomplete="off"  class="form-control txt inp_contact" placeholder="Type Your Message.." required id="s_message"></textarea>
+                                    </div>
+                                    <span id="mail-status"></span>
+                                        <span class="input-group-btn">
+                                            <button onclick ="sendContact();" type="button" class="btn btn-rose black-hover">Submit Message</button>
+                                        </span>
+                                    
+                                    <!-- Newsletter Form Notification -->       
+                                    <label for="s-email" class="form-notification"></label>      
+                                </form>                             
+                            </div>
+                        </div>  <!-- END FOOTER NEWSLETTER FORM -->
+                    </div>    <!-- END FOOTER CONTENT -->
+                    <!-- BOTTOM FOOTER -->
+                    <div class="bottom-footer">
+                        <div class="row">
+                            <!-- FOOTER COPYRIGHT -->
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-8">
+                                <ul class="bottom-footer-list">
+                                    <!--<li><p>&copy; Copyright {{sitename}} 2020-2022</p></li>-->
+                                     <li><p>&copy; Copyright VZ SERVICES LLP 2020-2022</p></li>
+                                    {{#mobile}}
+                                        <li><p><a href="tel:{{{mobile}}}" target="_blank">{{{mobile}}}</a></p></li>
+                                    {{/mobile}}
+                                    {{#mail}}
+                                        <li><p class="last-li"><a href="mailto:{{{mail}}}">{{{mail}}}</a></p></li>
+                                    {{/mail}}
+
+                                </ul>
+                            </div>
+                            <!-- FOOTER SOCIALS LINKS -->
+                            <div class="col-lg-3">
+                                <ul class="foo-socials text-center clearfix">
+                                    <!--<li><a href="#" class="ico-facebook"><i class="fab fa-facebook"></i></a></li>
+                                    <li><a href="#" class="ico-twitter"><i class="fab fa-twitter"></i></a></li> 
+                                    <li><a href="#" class="ico-google-plus"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" class="ico-tumblr"><i class="fab fa-linkedin-in"></i></a></li> -->
+
+                                            {{#facebook}}
+                                            <li>
+                                              <a href="{{{facebook}}}" target="_blank" class="ico-facebook">
+                                                <i class="fab fa-facebook"></i>
+                                              </a>
+                                            </li>
+                                          {{/facebook}}
+
+                                          {{#twitter}}
+                                            <li>
+                                              <a href="{{{twitter}}}" target="_blank" class="ico-twitter">
+                                                <i class="fab fa-twitter"></i>
+                                              </a>
+                                            </li>
+                                          {{/twitter}}
+
+                                          {{#linkedin}}
+                                            <li>
+                                              <a href="{{{linkedin}}}" target="_blank" class="ico-tumblr">
+                                                <i class="fab fa-linkedin-in"></i>
+                                              </a>
+                                            </li>
+                                          {{/linkedin}}
+
+                                          <!--{{#youtube}}
+                                            <li>
+                                              <a href="{{{youtube}}}" target="_blank" class="ico-google-plus">
+                                                <i class="fab fa-youtube-play"></i>
+                                              </a>
+                                            </li>
+                                          {{/youtube}}-->
+
+                                          {{#instagram}}
+                                            <li>
+                                              <a href="{{{instagram}}}" target="_blank" class="ico-google-plus">
+                                               <i class="fab fa-instagram"></i>
+                                              </a>
+                                            </li>
+                                          {{/instagram}}
+
+                                          {{#whatsapp}}
+                                              <li>
+                                                  <a href="https://api.whatsapp.com/send?phone={{{whatsapp}}}" target="_blank" class="whatsapp btn">
+                                                      <i class="fab fa-whatsapp"></i>
+                                                  </a>
+                                              </li>
+                                          {{/whatsapp}}
+
+                                </ul>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>  <!-- END BOTTOM FOOTER -->
+                </div>     <!-- End container -->                                       
+            </footer>   <!-- END FOOTER-2 -->
+            <style> #scrollUp{ background-image: url('{{config.wwwwroor}}/theme/moove/pix/images/back-to-top.png');  } </style>
+        </div>  <!-- END PAGE CONTENT -->
+        <!-- EXTERNAL SCRIPTS
+        ============================================= -->   
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery-3.3.1.min.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/bootstrap.min.js"></script> 
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/modernizr.custom.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.easing.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.appear.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/menu.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/materialize.js"></script>   
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.scrollto.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.countdown.min.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/imagesloaded.pkgd.min.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/isotope.pkgd.min.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.flexslider.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/owl.carousel.min.js"></script>
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.magnific-popup.min.js"></script> 
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/register-form.js"></script> 
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/comment-form.js"></script>  
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.validate.min.js"></script>   
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/jquery.ajaxchimp.min.js"></script> 
+        <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="{{config.wwwroot}}/local/courses/js/custom.js"></script> 
+        <!-- Custom Script -->      
+        <script src="{{config.wwwwroor}}/theme/moove/amd/frontpage/js/custom.js"></script>
+    </body>
+</html> 
+ <script type="text/javascript">
+                function sendContact() {
+                    var valid;  
+                    valid = validateContact();
+                    if(valid) {
+                        jQuery.ajax({
+                            url: "../courses/contactus.php",
+                            data:'contactName='+$("#s_name").val()+'&contactEmail='+$("#s_email").val()
+                            +'&Subject='+$("#s_subject").val()
+                            +'&contactMessage='+$("#s_message").val(),
+                            type: "POST",
+                            success:function(data){
+                                //alert(data);
+                                $("#mail-status").html(data);
+                                $('#contactform')[0].reset();
+                            },
+                            error:function (){}
+                        });
+                    }
+                }
+
+
+                function validateContact() {
+                    var valid = true;   
+                    $(".inp_contact").css('border-color','');
+                    $(".info").html('');
+                    if(!$("#s_name").val()) {
+                        $("#contactName-info").html("(required)");
+                        $("#s_name").css('border-color','red');
+                        $("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#s_email").val()) {
+                        $("#contactEmail-info").html("(required)");
+                        $("#s_email").css('border-color','red');
+                        $("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#s_email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                        $("#contactEmail-info").html("(invalid)");
+                        $("#s_email").css('border-color','red');
+                        $("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+                     if(!$("#s_subject").val()) {
+                        $("#contactSubject-info").html("(required)");
+                        $("#s_subject").css('border-color','red');
+                        $("#contactSubject-info").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#s_message").val()) {
+                        $("#contactMessage-info").html("(required)");
+                        $("#s_message").css('border-color','red');
+                        $("#contactMessage-info").css('color','red');
+                        valid = false;
+                    }
+                    
+                    return valid;
+                }
+            </script>
+
+    <!--Start of Tawk.to Script-->
+ <!-- <script type="text/javascript">
+
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f1178e47258dc118bee6ca6/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script> -->
+<script>
+ jQuery(document).ready(function(){
+ jQuery('.enquiry-form').submit(function(e){
+    e.preventDefault();
+    jQuery.ajax({
+        type:"POST",
+        url:"{{{ config.wwwroot }}}/local/courses/contact_us.php",
+        data:jQuery(this).serialize(),
+        beforeSend:function(){
+
+        },
+        success:function(res){
+            var data=JSON.parse(res);
+            if(data.status==true){
+          
+                jQuery('.enquiry-msg').html("<span class='text-success'>"+data.msg+"</span>");
+                setTimeout(function(){
+                     jQuery('.enquiry-msg').html("");
+                },5000);
+            }else{
+
+                jQuery('.enquiry-msg').html("<span class='text-danger'>"+data.msg+"</span>");
+                 setTimeout(function(){
+                     jQuery('.enquiry-msg').html("");
+                },2000);
+            }
+        },
+        complete:function(){
+
+        }
+    });
+       
+ });
+  jQuery(function() {
+        
+    });
+});
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<!--End of Tawk.to Script-->
+
+<style type="text/css">
+    #scrollUp{
+        margin-bottom: 75px;
+    }   
+
+    footer.footer ul li a {
+    width: 104%;
+}
+</style>
+

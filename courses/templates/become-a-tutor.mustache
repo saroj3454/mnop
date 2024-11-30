@@ -1,0 +1,1248 @@
+    {{>local_courses/courseheader}}
+
+  {{#showslider}}
+    <section id="hero-1" class="hero-section division">
+        
+        <div class="slider">
+            <ul class="slides">
+                 {{#sliders}}
+                <li id="slide-{{{ key }}}">
+                    
+                    <img src="{{{ image }}}" alt="{{{ caption }}}">
+                    
+                    <div class="caption d-flex align-items-center left-align">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 col-lg-7">
+                                    <div class="caption-txt">
+                                        
+                                        {{#title}}<h2 class="h2-sm">{{{ title }}}</h2>{{/title}}
+                                        
+                                        {{#description}}<p class="p-lg">{{{ description }}}</p>{{/description}}                                          
+                                        
+                                         {{#title}} <a href="/local/courses/" class="btn btn-md btn-rose tra-black-hover0">View Popular Courses</a>{{/title}}
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>  
+                    </div>  
+
+                </li>   
+                {{/sliders}}
+            </ul>
+        </div>  
+    </section>  
+    {{/showslider}}
+    {{^ showslider}}
+    <section class="slider">
+      
+    </section>
+    {{/ showslider}}
+        <div class="bg-image">
+        {{# courseimage}}
+            {{{courseimage}}}
+        {{/ courseimage}}
+        </div>
+        <br>
+        <br>
+        <br>
+     <!-------tab------->
+
+    <section class="sec_tab">
+
+            <style>
+
+                p.h_text {
+        padding: 0 8%;
+        margin-bottom: 4%;
+    }
+
+    section.sec_tab {
+        padding: 60px 3px;
+    }
+
+    .n_tab ul.nav-tabs{
+    border: none;
+
+    }
+
+
+
+    .n_tab ul.nav-tabs {
+        border: none;
+        display: inline-flex;
+    }
+    .footer-form .form-control {
+    margin-bottom: 10px!important;
+}
+
+
+
+    .n_tab.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        color: #fff!important;
+        background-color: #2a2356!important;
+        border-color: #2a2356 #2a2356 #2a2356;
+    }
+
+
+    .n_tab .nav-tabs .nav-link {
+        border: 1px solid #2a2356;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #2a2356;
+        border-radius: none!important;
+        margin-right: 21px;
+            padding: 7px 30px;
+    }
+
+   
+
+    .sbox-5.bt_t{
+          height: auto;
+        width: 100%;
+            margin: auto;
+            padding: 44px;
+            height: 313px;
+    }
+    .three_btn.text-center {
+        /* width: 150px; */
+        padding: 24px 0 47px 0;
+    }
+
+
+
+
+    a.t_hree_btn{
+          padding: 12px 60px;
+        background-color: #2a2356;
+        border-radius: 3px;
+        /* border: 1px solid #2a2356; */
+        font-weight: bold;
+           color: #fff!important;
+            margin-right: 31px;
+    }
+
+    a.t_hree_btn:hover{
+            background-color: #fff;
+            border: 1px solid #2a2356;
+            color:#2a2356!important;
+    }
+
+
+    .bt_t {
+        margin-top: 34px;
+    }
+    .t_left_img{
+       margin-bottom: 70px;
+    }
+
+
+
+.lessons .list-group-item {
+    margin-bottom: 66px!important;
+}
+
+
+    .t_box10.icon-sm{
+        margin-top: 43px;
+          padding-left: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 1px 0px #423c86;
+        padding: 5%;
+        background-image: url(https://www.vrtuz.com/pluginfile.php/1/theme_moove/sliderimage2/1598854110/slide-2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+    .t_box-4-txt {
+        text-align: center;
+        /* color: #fff; */
+    }
+    h5.t_box_h {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 700;
+    }
+    .t_box-4-txt p {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    h5.box_h5 {
+        font-size: 36px;
+        color: #fff;
+        padding: 32px 0 11px;
+    }
+
+    .t_left_img img{
+      width: 100%;   
+      height: 310px;
+      object: cover
+    }
+
+    .box_ul{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    ul.box_ul li {
+        list-style: none;
+
+    }
+    .ic_n_img img {
+        width: 61%;
+    }
+    .main_icon {
+            text-align: center;
+        margin: 10px;
+        border: 1px solid#eee;
+        padding: 8px;
+        background-color: #fff;
+    }
+    .ic_n_text p {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .clear{
+      clear: both;
+    }
+
+    .icon_box {
+        margin-top: 50px;
+        border: 1px solid #eee;
+          background: linear-gradient(to right, #2a86c5, #bf3cac);
+        text-align: center;
+        padding: 20px;
+       
+    }
+    .top {
+        height: 83px;
+        width: 100%;
+    }
+
+.coverbox{
+
+           padding: 40px;
+    box-shadow: 0 0 3px 1px #2a23563d;
+       width: 100vw;
+    margin-left: -3%;
+}
+.ri_ght p {
+    font-size: 18px;
+}
+.lef_t p {
+    font-size: 18px;
+}
+
+a.join_for {
+  background-color: #ffffff;
+    padding: 5px 17px;
+    font-size: 24px;
+    color: #4379c1;
+    text-transform: uppercase;
+}
+
+.ic_n_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ic_n_img i {
+    font-size: 46px;
+    border-radius: 50px;
+    background-color: #2a2356;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_icon:hover .ic_n_img i{
+        color: #2a2356;
+    background-color: #fff;
+    border: 1px solid#2a2356;
+}
+
+
+
+.multy_user.text-center a {
+    color: #fff!important;
+    font-size: 24px;
+    border: 1px solid #eee;
+    padding: 3px 23px;
+}
+
+.multy_user.text-center {
+    margin-top: 33px;
+}
+.multy_user.text-center a:hover{
+    background-color: #fff;
+    color:#000!important;
+
+
+}
+.icon_box p.text-white b {
+    font-size: 18px;
+     font-weight: 600;
+}
+
+p.POWERFUL.text-center {
+      margin: 45px 0;
+}
+
+p.POWERFUL.text-center strong {
+    font-size: 22px;
+    font-weight: 600;
+    /* margin-top: 35px; */
+}
+
+.sbox-5{
+            border: 1px solid #e2e2e200!important;
+}
+.heading.text-center h2 {
+    width: 69%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .sbox-5.bt_t {
+    margin-bottom: 35px;padding: 22px;
+
+}
+
+.sbox-5 h5 {
+    margin-top: 0;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+.sbox-5.bt_t{
+        margin-bottom: 44px;
+            margin-top:0;
+            padding: 12px;
+    text-align: left;
+    height: auto;
+}
+
+
+a.join_for{
+    padding: 5px 7px;
+    font-size: 14px;
+}
+a.t_hree_btn {
+    padding: 8px 28px;
+    }
+    .footer-info a img {
+    width: 252px!important;
+    margin: auto;
+    height: 85px;
+}
+.main_icon{
+    adding: 17px 0 0 8px;
+
+
+}
+
+}
+
+@media screen and (max-width: 5
+80px) {
+   
+
+.sbox-5.bt_t{
+       border: 1px solid #e2e2e2e3!important;
+    height: auto;
+}
+   .n_tab .nav-tabs .nav-link{
+   margin-right: 4px;
+    padding: 7px 10px;
+}
+h2.width_us{  
+    font-size:18px!important;
+}
+
+.next_ar:before {
+    content: "\f178"!important;
+    font-family: FontAwesome!important;
+    position: absolute!important;
+    right: -16px!important;
+    color: #bd3dac!important;
+    font-size: 14px!important;
+    top: 6px!important;
+}
+.top_h {
+    font-size: 24px!important;}
+p.h_text{
+    font-size: 14px!important;
+}
+.heading.text-center h2 {
+    width: 100%;}
+
+h5.box_h5 {
+    font-size: 26px;
+    }
+
+.icon_box{
+padding: 32px 1px 32px 10px;
+}
+.multy_user.text-center a{
+    font-size: 20px;
+    padding: 3px 14px;
+}
+
+
+p.h_text {
+    padding: 0;
+    }
+
+a.t_hree_btn{   
+ padding: 8px 5px;
+margin-right: 13px;
+    font-size: 12px;
+}
+.sbox-5.bt_t, .t_left_img{
+    margin: 16px 1px;
+}
+a.join_for{
+    font-size: 18
+
+}
+ul.box_ul li{
+    width: 100%;    margin-bottom: 6px;
+
+}
+.main_icon{
+    adding: 17px 0 0 8px;
+
+
+}
+}
+
+
+
+@media screen and (max-width: 320px){
+a.t_hree_btn {
+    padding: 8px 5px;
+    margin-right: 0px;
+    
+}
+
+.main_icon{
+    adding: 17px 0 0 8px;
+}
+a.join_for {
+    font-size: 14px;
+}
+.coverbox {
+   
+    padding: 14px;
+    }
+
+
+}
+
+
+.top_h{
+        font-size: 45px;
+
+        color: #9452b4;
+}
+h2.width_us {
+    font-weight: 500;
+    font-size: 36px;
+}
+p.h_text {
+    padding: 0 8%;
+    margin-bottom: 4%;
+    font-size: 22px;
+}
+
+.t_hree_btn{
+    position:relative;
+}
+.next_ar:before {
+   content: "\f178";
+    font-family: FontAwesome;
+    position: absolute;
+    right: -30px;
+    color: #bd3dac;
+    font-size: 27px;
+    top: 4px;
+    }
+
+ </style>
+ <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+ <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+
+    <div class="container-fluid mt-3">
+      <div  class="row">
+        <div class="col-md-12">
+                <div class="heading text-center">
+                    <h2 class="top_h" >Choose integrated environment of VRTUZ and move way ahead of regular self-paced courses</h2>
+                    <div id="classroom">
+                    <p  class="h_text" id="vrtuz_lms">
+                       Our online platform comes with an integrated Enterprise LMS and a  Virtual Classroom Service.
+                    </p>
+                    </div>
+                </div>
+      <!-- Nav tabs -->
+      <div class="n_tab text-center">
+          <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab"href="#home">Enterprise LMS </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Live Virtual Classroom</a>
+        </li>
+       
+      </ul>
+
+      </div>
+      <!-- Tab panes -->
+      <div class="c_nte_nt">   
+      <div class="tab-content">
+        <div id="home" class=" tab-pane active"><br>
+        <div class="container-fluid">
+                <div class="row">
+                <div class="col-md-12">
+                <div class="heading text-center">
+                <h2 class="width_us">With our LMS easily create, manage, and publish your own online courses </h2>
+                <p  class="h_text w_s">
+                Easily Upload contacts Schedule Live classes and automate your Workflow
+                </p>
+              </div>
+            </div>
+
+                <div class="col-md-12">
+                <div class="three_btn text-center">
+
+                    <a class="t_hree_btn next_ar" >Pick a Topic</a>
+                     <a class="t_hree_btn next_ar">Prepare Course Curriculum</a>
+                     <a class="t_hree_btn next_ar">Create Course Content</a>
+                     <a class="t_hree_btn next_ar">Publish, Market & Earn</a>
+                      <!--<a class="t_hree_btn next_al">Publish and Market</a>-->
+
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="t_left_img text-center">
+                    <img src="https://www.vrtuz.com//local/courses/images/lms.jpg" alt="imge">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="sbox-5 bt_t">
+
+               
+                <div class="sbox-5-txt">
+
+                    <h5 class="h5-md">What is an LMS and related benefits ?</h5>
+
+                    <p class="grey-color">The digital disruption has given rise to the use of Learning Management Systems (LMS) across educational institutes. LMS is a software which provides an integrated space for the educators to track and manage the delivery of educational courses. You will be able to impart knowledge to a vast group of learners as well as store all the learning materials on one platform. You can maintain a steady flow of communication with parents, conduct various types of assessment tests in multiple formats, convey the kid’s progress and much more, </p>
+
+                </div>
+
+            </div>
+                </div>
+            </div>
+
+            <!-------2------>
+             <div class="row">
+               <div class="col-md-6 push-md-6">
+                  <div class="t_left_img text-center">
+                    <img src="https://www.vrtuz.com//local/courses/images/courses.jpg" alt="imge">
+                  </div>
+                </div>
+                 <!-------col-cend------>
+                <div class="col-md-6 pull-md-6">
+                <div class="sbox-5 bt_t">
+                <div class="sbox-5-txt">
+                    <h5 class="h5-md">Create highly interactive courses and customize</h5>
+                    <p class="grey-color">The course content needs to be engaging and challenging for providing an opportunity to the learners for developing a vibrant learning community. Interactive activities could be puzzles, presentations, quizzes, brainstorm sessions, games, and even virtual field trips. Focus should be on providing students with information such as readings and videos lectures, along with involving interactions and practice. You should check in with your students on a regular basis, just as you would in a physical classroom. Make sure that your audience is understanding the discussed concepts.</p>
+                  </div>
+                </div>
+                </div>
+               
+               
+
+            </div>
+
+              <!-------3------>
+             <div class="row">
+                
+                 <div class="col-md-6">
+                  <div class="t_left_img text-center">
+                    <img src="https://www.vrtuz.com//local/courses/images/exam.jpg" alt="imge">
+                  </div>
+                </div> <!-------col-cend------>
+
+                <div class="col-md-6">
+                <div class="sbox-5 bt_t">
+                <div class="sbox-5-txt">
+                    <h5 class="h5-md">Add Tests and Exams</h5>
+                    <p class="grey-color">LMS offers unique features for making the process of assessment a hassle-free task. Instructors can prepare personalised quizzes comprising of multiple-choice questions, fill ups, true/false etc. to identify how well learners have understood the course content and adjust their teaching accordingly. Along side tests and exams, you can conduct a one-to-one session for getting a qualitative assessment of your students and assist them about their areas of improvement. Moreover, LMS can assist the tutors in the evaluating the progress of students by easily spotting the problems in a student’s performance</p>
+                  </div>
+                </div>
+                </div>
+               
+            </div>
+
+
+        <div class="coverbox"  style="background: linear-gradient(to right, #2a86c5, #bf3cac);">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="ri_ght">
+                        <p class="text-white">LET US BUILD a Community for online educators and GROW together</p>
+                        <p class="text-white">Transform your expertise by teaching other people into a profitable online course</p>
+                        <p class="text-white">Leave everything to us - from Marketing, to managing the platform, to providing any sort of technical support.</p>
+                        <p class="text-white"> Use our feature-rich platform and deliver online classes just like physical classrooms.</p>
+                    </div>
+                </div>
+        
+                <div class="col-md-4">
+                    <div class="lef_t">
+                        <p class="text-white">Start teaching online with us and feel the difference.  </p>
+                        <br><br><br><br>
+                        <a class="join_for" href="https://www.vrtuz.com/login/signup.php?" target="_blank">Join us now for free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+        </div>
+
+        <!-- menu-1-start -->
+        <div id="menu1" class=" tab-pane fade "><br>
+          
+            <div class="container mt-3">
+      <div  class="row">
+        <div class="col-md-12">
+                <div class="heading text-center">
+                <h2>Deliver interactive live classes with our integrated Virtual Classroom platform</h2>
+                   <!--  <p  class="h_text">
+                       <b> Deliver interactive live classes with our integrated Virtual Classroom platform</b>
+                    </p> -->
+              
+                </div>
+      <!-- Nav tabs -->
+      <!-- Tab panes -->
+     
+    </div>
+      </div>
+
+    <!-- box -->
+   
+    </div>
+
+
+    <!-- end-row -->
+
+
+<section>
+<div class="t_box10 icon-sm">
+
+          <div class="overla10"></div>
+                    <!-- Text -->
+                    <div class="t_box-4-txt">
+                        <h5 class="box_h5"> LIVE ENGAGEMENT BETWEEN INSTRUCTORS AND LEARNERS </h5>
+                        <p>RETHINK ONLINE LEARNING WITH OUR VIRTUAL CLASSROOM SERVICE </p>
+                    </div>
+
+                </div>
+
+ 
+
+<div class="container-fluid p-0">
+<div class="row">
+<div class="col-md-12">
+<!-- row start-->
+    <div  class="row">
+        <div class="col-md-12 ">
+
+
+    <div class="icon_box">
+    <p class="text-white"><b>WEB BASED PLATFORM - NO SEPARATE APP OR INSTALLATION NEEDED </b></p>
+      <ul class="box_ul">
+        <li class="w_25"> 
+          <div class="main_icon"> 
+              <div class="ic_n_img">
+              <i class="fa fa-play" aria-hidden="true"></i>
+                  
+              </div>
+               <div class="ic_n_text">
+               <p>Hd Quality Video Meetings</p>
+              </div>
+
+          </div>
+        </li>
+          <li class="w_25">
+          <div class="main_icon"> 
+              <div class="ic_n_img">
+           <i class="fa fa-volume-up" aria-hidden="true"></i>
+              </div>
+               <div class="ic_n_text">
+               <p>Hd Quality Audio </p>
+              </div>
+
+          </div>
+        </li>
+          <li class="w_25">
+          <div class="main_icon"> 
+              <div class="ic_n_img">
+
+             <i class="fa fa-comments" aria-hidden="true"></i>
+              </div>
+               <div class="ic_n_text">
+               <p>Public and Private Chat Options </p>
+              </div>
+
+          </div>
+        </li>
+          <li class="w_25">
+          <div class="main_icon"> 
+              <div class="ic_n_img">
+           <i class="fa fa-video"></i>
+              </div>
+               <div class="ic_n_text">
+               <p>Record HD Sessions </p>
+              </div>
+
+          </div>
+        </li>
+          <li class="w_25">
+          <div class="main_icon"> 
+              <div class="ic_n_img">
+             <i class="fa fa-desktop" aria-hidden="true"></i>
+              </div>
+               <div class="ic_n_text">
+               <p>Share Screen and Web Browser with Audio</p>
+              </div>
+
+          </div>
+        </li>
+          <li class="w_25">
+          <div class="main_icon"> 
+              <div class="ic_n_img">
+               <i class="fa fa-users" aria-hidden="true"></i>
+              </div>
+               <div class="ic_n_text">
+               <p>Multi-User Whiteboard Allow Other To Draw </p>
+              </div>
+
+          </div>
+        </li >
+          <li class="w_25">
+          <div class="main_icon"> 
+              <div class="ic_n_img">
+               <i class="fa fa-upload" aria-hidden="true"></i>
+              </div>
+               <div class="ic_n_text">
+               <p>Share, Upload and Present Documents</p>
+              </div>
+
+          </div>
+        </li>
+        <div class="clear"></div>
+      </ul>
+
+      <div class="multy_user text-center">
+         <a href ="https://www.vrtuz.com/login/signup.php?" target="_blank">Get Start For Free Now</a>
+      </div>
+    </div>
+
+          </div>
+          </div>
+    <!-- row-end -->
+</div>
+</div>
+</div>
+</section>
+
+                    <section>
+
+
+                      <div class="container-fluid mt-3">
+                        <!-- row-start -->
+        <div class="row">
+                    <div class="col-md-12">
+                    <p class="POWERFUL text-center"><strong>A POWERFUL PLATFORM WITH LOADS OF ADDITIONAL FEATURES 
+
+                    </strong></p>
+
+                    </div>
+
+           <!---- <div class="top"></div>---->
+                <div class="col-md-6">
+                  <div class="t_left_img text-center">
+                    <img src="https://www.vrtuz.com//local/courses/images/fluid.jpg" alt="imge">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="sbox-5 bt_t">
+
+               
+                <div class="sbox-5-txt">
+
+                    <h5 class="h5-md">Dynamic and Fluid Layout</h5>
+
+                    <p class="grey-color">‘Vrtuz’ offers the benefit of dynamic web-pages with a fluid layout to make it user friendly. A dynamic website is easier to maintain as it accesses information from a database. Thus, to update the content of the page, one only needs to make necessary changes in the database record. The fluid layout adjusts to user’s screen resolution as majority of components inside have percentage widths.</p>
+
+                </div>
+
+            </div>
+                </div>
+            </div>
+
+            <!-------2------>
+             <div class="row">
+             <!-------col-cend------>
+                 <div class="col-md-6 push-md-6">
+                  <div class="t_left_img text-center">
+                    <img src="https://www.vrtuz.com//local/courses/images/laptop.jpg" alt="imge">
+                  </div>
+                </div>
+                <div class="col-md-6 pull-md-6">
+                <div class="sbox-5 bt_t">
+                <div class="sbox-5-txt">
+                    <h5 class="h5-md">Work on every kind of platform- Mobile,Tablet,Laptop and Desktop</h5>
+                    <p class="grey-color">The idea of ‘Vrtuz’ is to provide a platform which can not only be accessed from a mobile phone, but also works well for a tablet, laptop or desktop. This offers convenience & ease for the users and they can perform their specific tasks, whether they are sitting on a desk with a traditional computer or standing in the lawn using a tablet for taking a video lecture.</p>
+                  </div>
+                </div>
+                </div>
+                
+            </div>
+              <!-------3------>
+             <div class="row">
+
+
+                   <div class="col-md-6 ">
+                  <div class="t_left_img text-center">
+                    <img src="https://www.vrtuz.com//local/courses/images/shapes.png" alt="imge">
+                  </div>
+                </div> 
+                <!-------col-cend------>
+               <div class="col-md-6 ">
+                <div class="sbox-5 bt_t">
+                <div class="sbox-5-txt">
+                    <h5 class="h5-md">Dynamic whiteboard with various tools and shapes</h5>
+                    <p class="grey-color">‘Vrtuz’ provides a Dynamic Whiteboard for educators which equips them with new & innovative ways to teach various concepts and make the lectures enjoyable for students. The learners can interact with the learning material through touching, drawing, or writing on the board. Students become attentive, they engage more in the classroom and as a result, the learning experience increases. The digital board is easy to use and requires no maintenance.</p>
+                  </div>
+                </div>
+                </div>
+                
+               
+            </div>
+            <!-------4------>
+         <div class="row">
+
+          <div class="col-md-6 push-md-6">
+              <div class="t_left_img text-center">
+                <img src="https://www.vrtuz.com//local/courses/images/document.jpg" alt="imge">
+              </div>
+            </div> 
+            <!-------col-cend------>
+            <div class="col-md-6 pull-md-6">
+            <div class="sbox-5 bt_t">
+            <div class="sbox-5-txt">
+                <h5 class="h5-md">Document reader with marking tools</h5>
+                <p class="grey-color">‘Vrtuz’ has a document reader with mark-up tools, to make the entire teaching and learning process easy. The marking tools allow the individuals to add comments to files with sticky notes, highlight specific text using different colours, put straight lines for underlining or striking out, and place certain shapes in the content. These tools are quick, easy and accurate to use for making the required modifications & changes in the content. </p>
+              </div>
+            </div>
+            </div>
+
+            
+            
+            
+           
+        </div>
+          <!-------5------>
+         <div class="row">
+            
+             <div class="col-md-6">
+              <div class="t_left_img text-center">
+                <img src="https://www.vrtuz.com//local/courses/images/launage.jpg" alt="imge">
+              </div>
+            </div> <!-------col-cend------>
+            <div class="col-md-6">
+            <div class="sbox-5 bt_t">
+            <div class="sbox-5-txt">
+                <h5 class="h5-md">Multiple language support</h5>
+                <p class="grey-color">‘Vrtuz’ offers multilingual support to optimize a user’s experience by localizing the teaching-learning process and putting an end to the communication & language barriers. The courses available on our platform are easily accessible and easy to translate, depending on their location or preferences. The users get a personalized experience and a complete solution for achieving their learning objectives. Moreover, both the teachers and students have a chance to become diverse and multicultural.</p>
+              </div>
+            </div>
+            </div>
+           
+        </div>
+          <!-------6------>
+         <div class="row">
+            <div class="col-md-6 push-md-6">
+              <div class="t_left_img text-center">
+                 <img src="https://www.vrtuz.com//local/courses/images/vedio.png" alt="imge">
+              </div>
+            </div>
+             <!-------col-cend------>
+            <div class="col-md-6 pull-md-6 ">
+            <div class="sbox-5 bt_t">
+            <div class="sbox-5-txt">
+                <h5 class="h5-md">Share external video directly</h5>
+                <p class="grey-color">Vrtuz’ offers the advantage of sharing an external video directly, in real time during the lectures. A human brain processes videos faster than texts, and thus tutors are emphasizing on video-based learning. Videos help in intuitive learning among students, as it adds life to the online classes and makes it effective and engaging. Moreover, this maximises retention and provides a practical learning experience to some extent. </p>
+              </div>
+            </div>
+            </div>
+           
+              
+
+        </div>
+         <!-------7------>
+         <div class="row">
+            
+             <div class="col-md-6">
+              <div class="t_left_img text-center">
+                 <img src="https://www.vrtuz.com//local/courses/images/user.jpg" alt="imge">
+              </div>
+            </div> <!-------col-cend------>
+            <div class="col-md-6">
+            <div class="sbox-5 bt_t">
+            <div class="sbox-5-txt">
+                <h5 class="h5-md">Simultaneous screen usage by multiple users</h5>
+                <p class="grey-color"></p>
+              </div>
+            </div>
+            </div>  
+      
+
+
+
+    <!-- row-end -->
+  <!-- box-start -->
+
+
+    </div>
+
+
+        </div>
+      <!----end--container--->
+
+<div class="container-fluid p-0" style="    background: linear-gradient(to right, #2a86c5, #bf3cac);">
+  <div class="row">
+    <div class="col-md-12">
+       <div class="coverbox" >
+    <div class="row">
+        <div class="col-md-8">
+            <div class="ri_ght">
+           <p class="text-white">LET US BUILD a Community for online educators and GROW together  </p>
+
+           <p class="text-white">Transform your expertise by teaching other people into a profitable online course  </p>
+          <p class="text-white">Leave everything to us - from Marketing, to managing the platform, to providing any sort of technical support.  </p>
+
+            <p class="text-white"> Use our feature-rich platform and deliver online classes just like physical classrooms. 
+ </p>
+        </div>
+        </div>
+        
+         <div class="col-md-4">
+           <div class="lef_t">
+<p class="text-white">Start teaching online with us and feel the difference.  </p>
+<br>
+<br>
+<br>
+<br>
+<a class="join_for" href="https://www.vrtuz.com/login/signup.php?" target="_blank">Join us now for free</a>
+           </div>
+        </div>
+    </div>
+    
+    
+    </div>
+  <!-- box-end -->
+    </div>
+  </div>
+</div>
+
+
+
+      
+      </div>
+  <!-- menu-1-end -->
+
+      
+        </div>
+    </div>
+      </div>
+    </div>
+
+            
+
+
+
+    </section>
+
+
+
+
+    <!-------tab------->
+
+    <!-----<section id="registration" class="my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+        <div class="row" style="margin-top: 100px;">
+             <div class="col-md-12" style="text-align: center">
+              <br>
+              <h1 style="font-size: 150px;">This Page is under construction..</h1>
+            </div>
+
+          </div>
+    </div>
+    </section> ----->
+
+    <style type="text/css">
+      input { 
+        text-transform: uppercase;
+    }
+
+    #register-form p{
+      margin-bottom: 3px;
+    }
+
+    .grey-color{
+    text-align: justify;
+    }
+
+    .w_25{
+    width: 25%;
+    }
+
+    @media(max-width: 768px){
+        .w_25{
+        width: 100%;
+        }
+    }
+    </style>
+
+    {{>local_courses/coursefooter}}
+
+
+    <script type="text/javascript">
+    $("#tutors_area").hide();
+    // <![CDATA[
+    jQuery(document).ready(function(){
+
+
+    $('input:radio[name="role_type"]').change(function(){
+        if($(this).val() == 'tutor'){
+           $("#tutors_area").show();
+        }
+        else{
+          $("#tutors_area").hide();
+        }
+
+    });
+
+    });
+
+    // ]]>
+    </script>
+
+    <script type="text/javascript">
+                    function submitRegistrationForm() {
+                        var valid;  
+                        valid = validateRegistrationForm();
+                        if(valid) {
+                            jQuery.ajax({
+                                url: "../courses/contactus11.php",
+                                data:'contactName='+$("#s_name").val()+'&contactEmail='+
+                                $("#s_email").val()+'&contactMessage='+
+                                $("#s_message").val(),
+                                type: "POST",
+                                success:function(data){
+                                    //alert(data);
+                                    $("#mail-status").html(data);
+                                    $('#contactform')[0].reset();
+                                },
+                                error:function (){}
+                            });
+                        }
+                    }
+
+
+                    function validateRegistrationForm() {
+                        var valid = true;   
+                        $(".cnt_info").css('border-color','');
+                        $(".err-info").html('');
+
+                         if(!$("#cnt_name_title").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_name_title").css('border-color','red');
+                            //$("#cnt_fname").attr("placeholder","First Name is required");
+                             valid = false;
+                        }
+                        if(!$("#cnt_fname").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_fname").css('border-color','red');
+                            //$("#cnt_fname").attr("placeholder","First Name is required");
+                             valid = false;
+                        }
+
+
+                        if(!$("#cnt_mname").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_mname").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+                        if(!$("#cnt_lname").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_lname").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+                        if(!$("#cnt_fathername").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_fathername").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+
+                        if(!$("#cnt_phone").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_phone").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+
+                         else if(!$("#cnt_phone").val().match(/^[0-9]{10}$/)) {
+                             $("#err-phone").html("(This is not a valid Phone Number)");
+                            $("#cnt_phone").css('border-color','red');
+                            $("#err-phone").css('color','red');
+                            valid = false;
+                        }
+
+                        if(!$("#cnt_email").val()) {
+                            $("#cnt_email").css('border-color','red');
+                            $("#err-email").css('color','red');
+                            valid = false;
+                        }
+                        if(!$("#cnt_email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                             $("#err-email").html("(This is not a valid email address.)");
+                            $("#cnt_email").css('border-color','red');
+                            $("#err-email").css('color','red');
+                            valid = false;
+                        }
+
+                         if(!$("#cnt_cemail").val()) {
+                            
+                            $("#cnt_cemail").css('border-color','red');
+                            $("#err-cemail").css('color','red');
+                            valid = false;
+                        }
+
+                         if(!$("#cnt_cemail").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                            $("#err-cemail").html("(This is not a valid email address.)");
+                            $("#cnt_cemail").css('border-color','red');
+                            $("#err-cemail").css('color','red');
+                            valid = false;
+                        }
+
+                        if($("#cnt_email").val()!=$("#cnt_cemail").val()){
+
+                           $("#err-cemail").html("(Confirm email does not match.)");
+                            $("#cnt_cemail").css('border-color','red');
+                            $("#err-cemail").css('color','red');
+                            valid = false;
+
+                        }
+
+                         if(!$("#cnt_city").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_city").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                          if(!$("#cnt_level_studies").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_level_studies").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                          if(!$("#cnt_name_institution").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_name_institution").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                          if(!$("#cnt_institution_location").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_institution_location").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                      if($('input[name="role_type"]:checked').val()=='tutor'){
+
+                          if(!$("#cnt_upload_doc").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_upload_doc").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                        if(!$("#cnt_upload_video").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_upload_video").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+
+                      }
+
+                        return valid;
+                    }
+                   $(function(){
+                     var url=location.href;
+                     
+                        var arr=url.split('#');
+                        var lastElement=arr.length-1;
+                        console.log(arr[lastElement]);
+                    var $this = $('a[href="#' + arr[lastElement] + '"]');
+                    $this.click();
+                    $('.foo-links').on('click','li',function(){
+                        var url=location.href;
+                     
+                        var arr=url.split('#');
+                        var lastElement=arr.length-1;
+                        console.log(arr[lastElement]);
+                        var $this = $('a[href="#' + arr[lastElement] + '"]');
+                        $this.click();
+                    }); 
+                        
+                    });
+                        
+/*document.addEventListener("contextmenu", function(event){
+event.preventDefault();  
+}, false);*/
+                </script>

@@ -1,0 +1,72 @@
+{{!
+    This file is part the Local Analytics plugin for Moodle
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_catalogue/cataloguecoursedetails
+
+    Template is used to show the list of course category.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+    
+    Context variables required for this template:
+    * Many more to come 
+
+    Example context (json):
+    { "siteid": UA-90210-15, "addition": 2, }
+}}
+<!-- Course details page -->
+{{>local_courses/courseheader}}
+{{# hasblogs}}
+<section id="blogslisting" class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="my-5">Blogs</h2>
+      </div>
+    </div>
+    <div class="row">
+      {{# blogs}}
+      <div class="col-md-4 mt-3 ">
+        <div class="card">
+           <a href=""> <img src="{{{picture_url}}}" class="img-fluid"></a>
+            <div class="blogdetails">
+              <h3 class="text-capitalize"> {{{subject}}} </h3>
+              <p> {{{summary}}} </p>
+            </div>
+          </div>
+        </div>
+      {{/ blogs}}
+    </div>
+  </div>
+</section>
+<script
+
+jQuery(document).ready(function(){
+  jQuery(function() {
+        jQuery(this).bind("contextmenu", function(event) {
+            event.preventDefault();
+            
+        });
+    });
+});
+</script>
+{{/ hasblogs}}
+
+{{>local_courses/coursefooter}}

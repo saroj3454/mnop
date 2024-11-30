@@ -1,0 +1,223 @@
+{{!
+  This file is part the Local Analytics plugin for Moodle
+
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+  @template local_catalogue/cataloguecoursedetails
+
+  Template is used to show the list of course category.
+
+  Classes required for JS:
+  * none
+
+  Data attributes required for JS:
+  * none
+
+  Context variables required for this template:
+  * Many more to come 
+
+  Example context (json):
+  { "siteid": UA-90210-15, "addition": 2, }
+}}
+<!-- Course details page -->
+{{>local_courses/courseheader}}
+{{#institute}}
+<section class="my-5 pt-5">
+  <div class="container">
+    <div class="row">
+     <div class="col-md-2">
+      {{#picture_url}}
+       <div class="user-profile">
+         <img src="{{{ picture_url }}}" class="img-fluid">
+       </div>
+      {{/picture_url}}
+     </div>
+     <div class="col-md-10">
+          <div class="col-md-12">
+            <div class="user-info">
+              <br>
+              {{#Nameofinstitution}}
+               <h2>{{{ Nameofinstitution }}}</h2>
+              
+               <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit </p>-->
+              {{/Nameofinstitution}}
+             </div>
+          </div>
+          <div class="container">
+                 <div class="row">
+                  {{#author_name}}
+                   <div class="col-md-4">
+                    <div class="user-info">
+                       <p>Name of Director:&nbsp; <span>{{{ author_name }}}</span></p>
+                    </div>
+                  </div>
+                  {{/author_name}}
+                  {{#contact_number}}
+                  <div class="col-md-4">
+                    <div class="user-info">
+                       <p>Contact Number:&nbsp; <span>{{{ contact_number }}}</span></p>
+                    </div>
+                  </div>
+                  {{/contact_number}}
+                  {{#email_id}}
+                  <div class="col-md-4">
+                    <div class="user-info">
+                       <p>Email id:&nbsp; <span>{{{ email_id }}}</span></p>
+                    </div>
+                  </div>
+                  {{/email_id}}
+                 </div>
+            </div>
+            <div class="container">
+                 <div class="row">
+                 
+                   <div class="col-md-4">
+                    <div class="user-info">
+                       <p>No. of Enrolled Student:&nbsp; <span>{{{ total_student }}}</span></p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="user-info">
+                       <p>No. of  Tutors in The Institution:&nbsp; <span>{{{ total_tutor }}}</span></p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="user-info">
+                       <p>No. of Courses Provided:&nbsp; <span>{{{ total_course }}}</span></p>
+                    </div>
+                  </div>
+                  
+                 </div>
+            </div>
+     </div>
+   </div>
+ </div>
+</section>
+<section class="pt-5 pb-5 bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tutor-box">
+          <div class="heading">
+            <h2>About The Institution</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-6">
+            {{#disofinstitution}}
+              {{{ disofinstitution }}}
+            {{/disofinstitution}}
+          </div>
+        <div class="col-md-6"> 
+          {{#imageofinstitution}}
+            <img src="{{{ imageofinstitution }}}">
+          {{/imageofinstitution}}
+        </div>
+   </div>
+</div>
+</section>
+<br>
+{{/institute}}
+<!-- <section  class="bg-gray pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="teaching-box">
+          <div class="heading">
+            <h2>About The Director</h2>
+          </div>
+          <div class="work_experience-list">
+            <p>Name of Director</p>
+            <p>Position</p>
+            <p>From to Years</p>
+            <hr>
+            <p><strong>Small Description:-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</strong></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+{{# havetutors}}
+<section id="teachers" class="my-5">
+  <div class="container">
+    <div class="row"> <div class="col-md-12"> <h3 class="text-center text-uppercase">OUR TOP TRENDING TUTORS </h3><br> </div> </div>
+    <div class="row owl-carousel carousel-main">
+    {{#tutors}}
+      <div class="col-md-12 mt-3">
+        <div class="teacher-header">
+          <img src="{{{profileurl}}}" class="img-fluid">
+          <div class="teacher-caption p-2">
+          <a href="{{{tutor_url}}}" target="_blank"><h5 class="my-2">{{{firstname}}} {{{lastname}}}</h5></a>
+          
+        </div>
+        </div>
+      </div>
+    {{/tutors}}
+    </div>
+  </div>
+</section>
+{{/havetutors}}
+
+{{#total_course}}
+<section id="course" class="my-5">
+  <div class="container">
+  <div class="row"> <div class="col-md-12"> <h3 class="text-center text-uppercase">OUR TOP TRENDING COURSES </h3><br> </div>
+    <div class="row owl-carousel carousel-main">
+      {{#noofcourses}}
+      <div class="course_section tooltip_hover">
+        <a href="{{coursedetails}}">
+          {{#courseimage}}<img src="{{courseimage}}" class="" width="250">{{/courseimage}}
+        </a>
+        <div class="tooltip_content">
+          <a href="{{coursedetails}}">
+            <span class="vrz_heading">{{fullname}}</span>
+          </a>
+          <br>
+          <div class="best">
+            <div class="best_text"> Bestseller</div>
+            <span class="vritle">Updated<span class="vritle_xs"> {{update_date}} </span></span>
+          </div>
+          <div class="vrzite-text"><span> {{catagoryname}} </span></div>
+          <div class="vrt_content">{{summary}}</div>
+          <div class="course-details">
+            <a href="{{enroll}}">
+              <button type="button" class=" btn btn-rose black-hover" style="width: 100%;">Add to cart</button>
+            </a>
+          </div>
+        </div>
+        <h5 class="h5 text-left my-3 coursename">{{fullname}}</h5>
+        <p class="total_enrolled"> <strong> Enrolled Students : </strong> {{enrollStudent}}</p>
+        <div class=" right">
+          <span>{{course_price}}</span>
+          <a href="{{enroll}}"> <button class="btn btn-primary">Enroll Now</button></a>
+        </div>
+      </div>
+      {{/noofcourses}}
+    </div>
+  </div>
+</section>
+<script>
+window.addEventListener("contextmenu", function(event){
+event.preventDefault();
+//alert('Right Click is Disabled');    
+}, false);
+</script>
+{{/total_course}}
+{{>local_courses/coursefooter}}

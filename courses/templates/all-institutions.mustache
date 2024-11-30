@@ -1,0 +1,936 @@
+    {{>local_courses/courseheader}}
+
+    
+  <section id="searchsection"  class="bg-lightgrey wide-61 services-section division" style="background:linear-gradient(to right, #2a86c5, #bf3cac); height: 350px;">    
+      <div class="container" style="padding-top: 140px;">
+                    <h1 align="center" style="color: white;font-size: 40px;">Search Institution!</h1>
+                    <br>
+              <div class="row">
+ 
+                    <div class="col-md-12" align="center">
+
+                       <!--  <input checked="" type="radio" name="searchtype" value="coursename" id="checkbox_2" class="searchtype"/><span style="color: white"> Search By Course Name</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                      <!--  <input type="radio" name="searchtype" value="coursecategory" id="checkbox_3" class="searchtype"/><span style="color: white"> Search By Course Category</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input  type="radio" name="searchtype" value="tutorname" id="checkbox_4" class="searchtype"/><span style="color: white"> Search By Tutor Name</span>  -->   
+                    </div>
+                  <div class="col-md-12">
+                      <div class="searchbar">
+                        <input  type="hidden" id="apiurl" name="apiurl" value="{{{ config.wwwroot }}}/theme/moove/searchapi.php?search_type=institution">
+                        
+                        <input type="text" name="search" id="searchterm" class="form-control" autoComplete="off" placeholder="Search Keyword from institution name">
+
+                            <select name="subsearch" id="subsearch" class="form-control">
+                                <option value="all"> All Categories </option>
+                                 {{# hascategory}}
+                                {{# category}}
+                                <option value="{{cat_id}}">{{{cat_name}}}</option>
+                                 {{/ category}}
+                                  {{/ hascategory}}
+                            </select>
+                        </div>
+                        <div class="searchlist"></div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+
+    <!-------tab------->
+
+    <section class="sec_tab">
+
+
+
+    <div class="container-fluid mt-3">
+      <div  class="row">
+        <div class="col-md-12">
+
+<div class="container">
+      <div class="row my-5">
+      <div class="col-md-4">
+        <h1 class="a_ins_tut"> All Institutions</h1>
+      </div>
+      <div class="col-md-8">
+          <form action="https://www.vrtuz.com/local/courses/institutions.php">
+          <div class="row">
+
+             <div class="col-md-4">
+              <!-- <input type="hidden" id="categoryid" name="categoryid" value="">-->
+              <input type="hidden" id="hiddenfield" value="{{coursesort}}">
+                <select class="form-control sh_ort" name="sortby" id="sortby" onchange="this.form.submit()">
+                <option selected="" disabled="">SORT BY</option>
+                <option value="desc">RECENT</option>
+                <option value="popular">POPULAR</option>
+              </select>
+            </div>
+
+            <div class="col-md-8">
+              <div class="in_line">
+                 <input type="hidden" id="hiddenfield1"  value="{{currentCategory}}">
+                 <select name="searchbycatid" id="searchbycatid" class="form-control se_rc_h" onchange="this.form.submit()">
+                                
+                                <option selected="" disabled="">SORT BY CATEGORIES</option>
+                                {{# hascategory}}
+                                <option value="">All</option>
+                                {{# category}}
+                                <option value="{{cat_id}}">{{{cat_name}}}</option>
+                                 {{/ category}}
+                                  {{/ hascategory}}
+                            </select>
+             <!--  <input type="text" name="searchkey" class="form-control" placeholder="Search for categories..." value="">&nbsp; -->
+            </div>
+            </div>
+           <!--  <div class="col-md-2">
+              <div class="search_button">
+                <button style="padding: 10px; 25px;" type="submit" class="btn btn-rose black-hover catsearch">SEARCH</button>
+              </div>
+            </div> -->
+           
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {{# hasinstitute}}
+            {{# institute}}
+                
+                {{#Nameofinstitution}}
+                {{#inccheck}}
+                <!-------image left start------>
+               <div class='col-12'>
+
+                    <div class='row bg-cards'>
+                        <div class="col-md-6">
+                            <a href="/local/courses/institutions.php?instituteid={{{ userid }}}">
+                                <div class="t_left_img text-center">
+                                    <img src="{{{ imageofinstitution }}}" alt="imge">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/local/courses/institutions.php?instituteid={{{ userid }}}">          
+                                <div class="sbox-5 bt_t">
+                                    <img class="card_img" src="{{{ picture_url }}}" height="170" wirth="150">
+                                    <h3 class="card_text"> {{{ Nameofinstitution }}}</h3>
+                                    <div class="row">
+                                           <div class="counter-box col-md-12 center">
+                                        <div class="row">
+                                                <div class="col-md-4 col-sm-12 center">
+                                                    <p>Our Students</p>
+                                                    <div class="circle_fa">
+                                                        <i class="fas fa-user-graduate cir_fa"></i> 
+                                                        <span class="counter">{{{ total_student }}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12 center">
+                                                    <p>Our Tutors</p>
+                                                    <div class="circle_fa">
+                                                        <i class="fas fa-chalkboard-teacher cir_fa"></i> 
+                                                        <span class="counter">{{{ total_tutor }}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12 center">
+                                                    <p>Our Courses</p>
+                                                     <div class="circle_fa">
+                                                    <i class="fas fa-graduation-cap cir_fa"></i>  
+                                                    <span class="counter">{{{ total_course }}}</span>
+                                                </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                        
+                        
+                                        
+                        
+                                       
+                        
+                                       
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+               </div>
+                <!-------image left end------>
+                {{/inccheck}}
+                
+                
+                {{#inccheck}}
+                <!-------image right start------>
+                    <div class="col-md-6">
+                        <a href="/local/courses/institutions.php?instituteid={{{ userid }}}">          
+                            <div class="sbox-5 bt_t">
+                                <img class="card_img" src="{{{ picture_url }}}" height="170" wirth="150">
+                                <h3 class="card_text"> {{{ Nameofinstitution }}}</h3>
+                                <div class="row">
+                                    <div class="counter-box col-md-12 center">
+                                        <div class='row'>
+                                            <div class="col-md-4 center">
+                                                <p>Our Students</p>
+                                                    <div class="circle_fa">
+                                                        <i class="fas fa-user-graduate cir_fa"></i> 
+                                                         <span class="counter">{{{ total_student }}}</span>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4 center">
+                                                <p>Our Tutors</p>
+                                                <div class="circle_fa">
+                                                    <i class="fas fa-chalkboard-teacher cir_fa"></i> 
+                                                    <span class="counter">{{{ total_tutor }}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 center">
+                                                <p>Our Courses</p>
+                                                <div class="circle_fa">
+                                                    <i class="fas fa-graduation-cap cir_fa"></i>  
+                                                    <span class="counter">{{{ total_course }}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+         
+
+                                   
+
+                                    
+
+                                    
+                
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                
+                
+                    <div class="col-md-6">
+                        <a href="/local/courses/institutions.php?instituteid={{{ userid }}}">
+                            <div class="t_left_img text-center">
+                                <img src="{{{ imageofinstitution }}}" alt="imge">
+                            </div>
+                        </a>
+                    </div>
+                <!-------image right end------>
+                {{/inccheck}}
+                
+                {{/Nameofinstitution}}
+                {{/ institute}}
+                {{/ hasinstitute}}
+
+    </div>          
+</div>
+
+
+           
+
+
+
+            </div>
+        </div>
+ 
+ </div>
+ <div class="text-center">
+  <nav aria-label="Page navigation example" text-align:center>
+     <ul class="pagination">
+        {{#previous}}
+         <li class="page-item"><a class="page-link" href="{{previous}}"><h3 class="text-right">Previous</h3></a></li>
+  {{/previous}}
+  {{#next}}
+    <li class="page-item"><a class="page-link" href="{{next}}"><h3 class="text-right">Next</h3></a></li>
+  {{/next}}
+  </ul>
+</nav>
+</div>
+ </section>
+    
+ <section>
+   <div class=""><!--container-fluid-->
+     <div class="row">
+       <div class="col-md-12">
+          <div class="coverbox mb-2" style="background: linear-gradient(to right, #2a86c5, #bf3cac);">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="ri_ght">
+                                    <p class="text-white">LET US BUILD a Community for online educators and GROW together  </p>
+                                        <p class="text-white">Transform your expertise by teaching other people into a profitable online course  </p>
+                                        <p class="text-white">Leave everything to us - from Marketing, to managing the platform, to providing any sort of technical support.  </p>
+                                         <p class="text-white"> Use our feature-rich platform and deliver online classes just like physical classrooms. 
+                                        </p>
+                             </div>
+                        </div>
+        
+                        <div class="col-md-4">
+                                <div class="lef_t">
+                                <p class="text-white">Start teaching online with us and feel the difference.  </p>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <a class="join_for" href="https://www.vrtuz.com/login/index.php">Join us now for free</a>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+       </div>
+     </div>
+   </div>
+
+ </section>
+
+
+
+    <style type="text/css">
+      input { 
+        text-transform: uppercase;
+    }
+
+    #register-form p{
+      margin-bottom: 3px;
+    }
+     h3{
+        color: #2a4591;
+    font-family: 'Baloo Da 2', cursive;
+    font-weight: 700;
+    letter-spacing:
+    }
+    a.page-link:hover {
+  background-color: #43e5c7;
+}
+
+.pagination{
+    justify-content: center !important;
+}
+
+.sbox-5{
+    border: 1px solid #adadad;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    </style>
+
+    {{>local_courses/coursefooter}}
+
+
+    <script type="text/javascript">
+    $("#tutors_area").hide();
+    // <![CDATA[
+    jQuery(document).ready(function(){
+
+
+    $('input:radio[name="role_type"]').change(function(){
+        if($(this).val() == 'tutor'){
+           $("#tutors_area").show();
+        }
+        else{
+          $("#tutors_area").hide();
+        }
+
+    });
+
+    });
+
+    // ]]>
+    </script>
+
+    <script type="text/javascript">
+                    function submitRegistrationForm() {
+                        var valid;  
+                        valid = validateRegistrationForm();
+                        if(valid) {
+                            jQuery.ajax({
+                                url: "../courses/contactus11.php",
+                                data:'contactName='+$("#s_name").val()+'&contactEmail='+
+                                $("#s_email").val()+'&contactMessage='+
+                                $("#s_message").val(),
+                                type: "POST",
+                                success:function(data){
+                                    //alert(data);
+                                    $("#mail-status").html(data);
+                                    $('#contactform')[0].reset();
+                                },
+                                error:function (){}
+                            });
+                        }
+                    }
+
+
+                    function validateRegistrationForm() {
+                        var valid = true;   
+                        $(".cnt_info").css('border-color','');
+                        $(".err-info").html('');
+
+                         if(!$("#cnt_name_title").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_name_title").css('border-color','red');
+                            //$("#cnt_fname").attr("placeholder","First Name is required");
+                             valid = false;
+                        }
+                        if(!$("#cnt_fname").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_fname").css('border-color','red');
+                            //$("#cnt_fname").attr("placeholder","First Name is required");
+                             valid = false;
+                        }
+
+
+                        if(!$("#cnt_mname").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_mname").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+                        if(!$("#cnt_lname").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_lname").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+                        if(!$("#cnt_fathername").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_fathername").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+
+                        if(!$("#cnt_phone").val()) {
+                            //$("#contactName-info").html("(required)");
+                            $("#cnt_phone").css('border-color','red');
+                            //$("#contactName-info").css('color','red');
+                            valid = false;
+                        }
+
+                         else if(!$("#cnt_phone").val().match(/^[0-9]{10}$/)) {
+                             $("#err-phone").html("(This is not a valid Phone Number)");
+                            $("#cnt_phone").css('border-color','red');
+                            $("#err-phone").css('color','red');
+                            valid = false;
+                        }
+
+                        if(!$("#cnt_email").val()) {
+                            $("#cnt_email").css('border-color','red');
+                            $("#err-email").css('color','red');
+                            valid = false;
+                        }
+                        if(!$("#cnt_email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                             $("#err-email").html("(This is not a valid email address.)");
+                            $("#cnt_email").css('border-color','red');
+                            $("#err-email").css('color','red');
+                            valid = false;
+                        }
+
+                         if(!$("#cnt_cemail").val()) {
+                            
+                            $("#cnt_cemail").css('border-color','red');
+                            $("#err-cemail").css('color','red');
+                            valid = false;
+                        }
+
+                         if(!$("#cnt_cemail").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                            $("#err-cemail").html("(This is not a valid email address.)");
+                            $("#cnt_cemail").css('border-color','red');
+                            $("#err-cemail").css('color','red');
+                            valid = false;
+                        }
+
+                        if($("#cnt_email").val()!=$("#cnt_cemail").val()){
+
+                           $("#err-cemail").html("(Confirm email does not match.)");
+                            $("#cnt_cemail").css('border-color','red');
+                            $("#err-cemail").css('color','red');
+                            valid = false;
+
+                        }
+
+                         if(!$("#cnt_city").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_city").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                          if(!$("#cnt_level_studies").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_level_studies").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                          if(!$("#cnt_name_institution").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_name_institution").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                          if(!$("#cnt_institution_location").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_institution_location").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                      if($('input[name="role_type"]:checked').val()=='tutor'){
+
+                          if(!$("#cnt_upload_doc").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_upload_doc").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+                        if(!$("#cnt_upload_video").val()) {
+                            //$("#contactEmail-info").html("(required)");
+                            $("#cnt_upload_video").css('border-color','red');
+                            //$("#contactEmail-info").css('color','red');
+                            valid = false;
+                        }
+
+
+                      }
+
+                        return valid;
+                    }
+
+                    $(document).ready(function() {
+
+});
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+duration: 2000,
+easing: 'swing',
+step: function (now) {
+$(this).text(Math.ceil(now));
+}
+});
+});
+</script>
+<style>
+.card_text{
+    text-align:center;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 13px;
+}
+
+select.form-control.sh_ort {
+    height: auto!important;
+}
+.form-control.se_rc_h{
+    height: auto!important;
+}
+h1.a_ins_tut {
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.counter-box {
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sbox-5{
+    text-align: center;
+}
+
+.circle_fa {
+        border: 1px solid #000 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        height: 80px !important;
+        width: 80px !important;
+        font-size: 26px !important;
+        margin: 0px !important;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+
+
+
+
+@media only screen and (max-width:540px) {
+.counter-box {
+    margin-right: 5%;
+    margin-left: 10%;
+}
+}
+
+
+</style>
+<style>
+
+
+    section.sec_tab {
+        padding: 60px 3px;
+    }
+
+    .n_tab ul.nav-tabs{
+    border: none;
+
+    }
+    .n_tab ul.nav-tabs {
+        border: none;
+        display: inline-flex;
+    }
+
+    .n_tab.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        color: #fff!important;
+        background-color: #2a2356;
+        border-color: #2a2356 #2a2356 #2a2356;
+    }
+
+
+    .n_tab .nav-tabs .nav-link {
+        border: 1px solid #2a2356;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #2a2356;
+        border-radius: none!important;
+        margin-right: 21px;
+            padding: 7px 30px;
+    }
+
+    .three_btn.text-center {
+        /* width: 150px; */
+        padding: 24px 0 47px 0;
+    }
+
+
+
+
+    a.t_hree_btn{
+          padding: 8px 60px;
+        background-color: #2a2356;
+        border-radius: 3px;
+        /* border: 1px solid #2a2356; */
+        font-weight: bold;
+           color: #fff!important;
+            margin-right: 12px;
+    }
+
+    a.t_hree_btn:hover{
+            background-color: #fff;
+            border: 1px solid #2a2356;
+            color:#2a2356!important;
+    }
+
+
+
+.lessons .list-group-item {
+    margin-bottom: 66px!important;
+}
+
+
+    .t_box10.icon-sm{
+        margin-top: 43px;
+          padding-left: 10px;
+        margin-bottom: 30px;
+        height: 233px;
+        box-shadow: 0px 0px 1px 0px #423c86;
+        padding: 5%;
+        background-image: url(https://www.vrtuz.com/pluginfile.php/1/theme_moove/sliderimage2/1598854110/slide-2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+    .t_box-4-txt {
+        text-align: center;
+        /* color: #fff; */
+    }
+    h5.t_box_h {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 700;
+    }
+    .t_box-4-txt p {
+        font-size: 18px;
+        color: #fff;
+    }
+a.join_for {
+    background-color: #ffffff;
+    padding: 5px 17px;
+    font-size: 24px;
+    color: #4379c1;
+    text-transform: uppercase;
+}
+    h5.box_h5 {
+        font-size: 36px;
+        color: #fff;
+        padding: 32px 0 11px;
+    }
+
+    .t_left_img img{
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+    }
+
+    ul{}
+    ul.box_ul li {
+        list-style: none;
+        width: 14%;
+        float: left;
+        display: inline;
+    }
+    .ic_n_img img {
+        width: 61%;
+    }
+    .main_icon {
+            text-align: center;
+        margin-right: 10px;
+        border: 1px solid#eee;
+        padding: 8px;
+        background-color: #fff;
+            height: 148px;
+    }
+    .ic_n_text p {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .clear{
+      clear: both;
+    }
+
+    .icon_box {
+        margin-top: 50px;
+       padding: 32px 1px 32px 29px;
+        border: 1px solid #eee;
+        background-color: #2a2356;
+        text-align: center;
+       
+    }
+    .top {
+        height: 83px;
+        width: 100%;
+    }
+
+.coverbox{
+
+           padding: 40px;
+    box-shadow: 0 0 3px 1px #2a23563d;
+}
+.ri_ght p {
+    font-size: 18px;
+}
+.lef_t p {
+    font-size: 18px;
+}
+
+
+
+.ic_n_img i {
+    font-size: 46px;
+    padding: 12px 9px;
+    border-radius: 50px;
+    background-color: #2a2356;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+}
+
+.main_icon:hover .ic_n_img i{
+        color: #2a2356;
+    background-color: #fff;
+    border: 1px solid#2a2356;
+}
+
+
+
+.multy_user.text-center a {
+    color: #fff!important;
+    font-size: 24px;
+    border: 1px solid #eee;
+    padding: 3px 23px;
+}
+
+.multy_user.text-center {
+    margin-top: 33px;
+}
+.multy_user.text-center a:hover{
+    background-color: #fff;
+    color:#000!important;
+
+
+}
+.icon_box p.text-white b {
+    font-size: 18px;
+     font-weight: 600;
+}
+
+p.POWERFUL.text-center {
+      margin: 45px 0;
+}
+
+p.POWERFUL.text-center strong {
+    font-size: 22px;
+    font-weight: 600;
+    /* margin-top: 35px; */
+}
+
+.heading.text-center h2 {
+    width: 69%;
+    margin: auto;
+}
+.sbox-2 h5, .sbox-3 h5, .sbox-4 h5, .sbox-5 h5 {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+.sbox-5 h5 {
+    margin-top: 0;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+ul.box_ul li{
+    width: 24%;    margin-top: 16px;
+}
+
+a.join_for{
+    padding: 5px 7px;
+    font-size: 14px;
+}
+a.t_hree_btn {
+    padding: 8px 28px;
+    }
+    .footer-info a img {
+    width: 252px!important;
+    margin: auto;
+    height: 85px;
+}
+.main_icon{
+    adding: 17px 0 0 8px;
+}
+
+#sortby{
+    margin-bottom: 15px;
+}
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+   
+.counter-box {
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+}
+
+   .n_tab .nav-tabs .nav-link{
+   margin-right: 4px;
+    padding: 7px 10px;
+}
+.heading h2{
+    
+    font-size: 18px;
+
+}
+
+h5.box_h5 {
+    font-size: 26px;
+    }
+
+.icon_box{
+padding: 32px 1px 32px 10px;
+}
+.multy_user.text-center a{
+    font-size: 20px;
+    padding: 3px 14px;
+}
+
+
+p.h_text {
+    padding: 0;
+    }
+
+a.t_hree_btn{   
+ padding: 8px 5px;
+margin-right: 1px;
+    font-size: 12px;
+}
+a.join_for{
+    font-size: 18
+
+}
+ul.box_ul li{
+    width: 100%;    margin-bottom: 6px;
+
+}
+.main_icon{
+    adding: 17px 0 0 8px;
+
+
+}
+}
+
+
+
+@media screen and (max-width: 320px){
+a.t_hree_btn {
+    padding: 8px 5px;
+    margin-right: 0px;
+    
+}                  
+
+.main_icon{
+    adding: 17px 0 0 8px;
+}
+a.join_for {
+    font-size: 14px;
+}
+.coverbox {
+   
+    padding: 14px;
+    }
+
+
+}
+
+ </style>
+<!--<script type="text/javascript">
+jQuery(document).ready(function(){
+  jQuery(function() {
+        jQuery(this).bind("contextmenu", function(event) {
+            event.preventDefault();
+            //alert('Right click disable in this site!!')
+        });
+    });
+});-->
+  
+  var value = $('#hiddenfield').val();
+  //console.log(value);
+  $('#sortby option[value="' + value + '"]').prop('selected', true);
+
+  var value = $('#hiddenfield1').val();
+  //console.log(value);
+  $('#searchbycatid option[value="' + value + '"]').prop('selected', true);
+
+</script>

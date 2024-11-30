@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+<section>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Exam Categories Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>{{{allstatedata}}}               
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Exam Categories Name</th>
+                <th>Action</th>
+                
+            </tr>
+        </tfoot>
+    </table>
+</section>
+<script type="text/javascript">
+	$(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">

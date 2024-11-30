@@ -1,0 +1,364 @@
+{{!
+    This file is part the Local Analytics plugin for Moodle
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_catalogue/cataloguecoursedetails
+
+    Template is used to show the list of course category.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+    
+    Context variables required for this template:
+    * Many more to come 
+
+    Example context (json):
+    { "siteid": UA-90210-15, "addition": 2, }
+}}
+<!-- Course details page -->
+{{>local_courses/courseheader}}
+<!-- <div id="particles-js"></div> -->
+
+{{#showslider}}
+<section id="hero-1" class="hero-section division">
+    <!-- SLIDER -->
+    <div class="slider" data-interval="10000" >
+        <ul class="slides">
+             {{#sliders}}
+            <li id="slide-{{{ key }}}">
+                <!-- Background Image -->
+                <img src="{{{ image }}}" alt="{{{ caption }}}">
+                <!-- Image Caption -->
+                <div class="caption d-flex align-items-center left-align">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-7">
+                                <div class="caption-txt">
+                                    <!-- Title -->
+                                    {{#title}}<h2 class="h2-sm">{{{ title }}}</h2>{{/title}}
+                                    <!-- Text -->
+                                    {{#description}}<p class="p-lg">{{{ description }}}</p>{{/description}}                                          
+                                    <!-- Button -->
+                                     {{#title}} <a href="/local/courses/" class="btn btn-md btn-rose tra-black-hover0">View Popular Courses</a>{{/title}}
+                                </div>
+                            </div>
+                        </div>  <!-- End row -->
+                    </div>  <!-- End container -->
+                </div>  <!-- End Image Caption -->
+
+            </li>   <!-- END SLIDE #1 -->
+            {{/sliders}}
+        </ul>
+    </div>  <!-- END SLIDER -->
+</section>  <!-- END HERO-1 --> 
+{{/showslider}}
+{{^ showslider}}
+<section class="slider">
+</section>
+{{/ showslider}}
+  <div class="ids"></div>
+    <div class="bg-image" >
+    {{# courseimage}}
+        {{{courseimage}}}
+    {{/ courseimage}}
+    </div>
+
+  
+  <section id="searchsection"  class="bg-lightgrey wide-61 services-section division" style=" background:linear-gradient(to right, #2a86c5, #bf3cac);">    
+      <div class="container">
+                    <h1 align="center" style="color: white;font-size: 40px;">Search Courses!</h1>
+                    <br>
+              <div class="row">
+ 
+                    <div class="col-md-12" align="center">
+
+                       <!--  <input checked="" type="radio" name="searchtype" value="coursename" id="checkbox_2" class="searchtype"/><span style="color: white"> Search By Course Name</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                      <!--  <input type="radio" name="searchtype" value="coursecategory" id="checkbox_3" class="searchtype"/><span style="color: white"> Search By Course Category</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input  type="radio" name="searchtype" value="tutorname" id="checkbox_4" class="searchtype"/><span style="color: white"> Search By Tutor Name</span>  -->   
+                    </div>
+                  <div class="col-md-12">
+                      <div class="searchbar">
+                        <input  type="hidden" id="apiurl" name="apiurl" value="{{{ config.wwwroot }}}/theme/moove/searchapi.php">
+                     
+                        <input type="text" name="search" id="searchterm" class="form-control" autoComplete="off" placeholder="Search Keyword from course name">
+
+                            <select name="subsearch" id="subsearch" class="form-control">
+                                <option value="all"> All Categories </option>
+                                 {{# hascategory}}
+                                {{# category}}
+                                <option value="{{cat_id}}">{{{cat_name}}}</option>
+                                 {{/ category}}
+                                  {{/ hascategory}}
+                            </select>
+                        </div>
+                        <div class="searchlist"></div>
+                    </div>
+                </div>
+            </div>
+</section>
+        
+<section id="allCourse" class="courses">
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-md-3">
+        <h1> All Courses</h1>
+      </div>
+      <div class="col-md-9">
+          <form  action="{{{ config.wwwroot }}}/local/courses/index.php#searchsection">
+          <div class="row">
+
+             <div class="col-md-4">
+              <!-- <input type="hidden" id="categoryid" name="categoryid" value="{{currentCategory}}">-->
+              <input type="hidden" id="hiddenfield" value="{{coursesort}}">
+                <select class="form-control" name="coursesort" onchange="this.form.submit()">
+                <option selected="" disabled="">SORT BY</option>
+                <option value="desc" selected="">RECENT</option>
+                <option value="popular">POPULAR</option>
+              </select>
+            </div>
+
+            <div class="col-md-8">
+              <div class="in_line">
+                 <input type="hidden" id="hiddenfield1" value="{{currentCategory}}">
+                 <select name="searchbycatid" id="searchbycatid" class="form-control"  onchange="this.form.submit()">
+                                
+                                <option selected="" disabled="">SORT BY CATEGORIES</option>
+                                <option value="all" selected=""> All Categories </option>
+                                 {{# hascategory}}
+                                {{# category}}
+                                <option value="{{cat_id}}">{{{cat_name}}}</option>
+                                 {{/ category}}
+                                  {{/ hascategory}}
+                            </select>
+             <!--  <input type="text" name="searchkey" class="form-control" placeholder="Search for categories..." value="{{searchkey}}">&nbsp; -->
+            </div>
+            </div>
+           <!--  <div class="col-md-2">
+              <div class="search_button">
+                <button style="padding: 10px; 25px;" type="submit" class="btn btn-rose black-hover catsearch">SEARCH</button>
+              </div>
+            </div> -->
+           
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      {{# hascourses}}
+      {{# courses}}
+       <div class="col-md-4">
+            <div class="single-course-container">
+            <a href="{{{coursedetails}}}">
+            <div class="course-img">
+              <img src="{{{courseimage}}}" class="img-fluid">
+            </div>
+            <div class="coursedetails">
+              <h5>{{{shortname}}}</h5>
+              <p>{{{summary}}}</p>
+            </div>
+            </a>
+            {{# hascourseteacher}}
+            <div class="teachers">
+              {{# courseteacher}}
+                <div class="single-teacher-profile">  
+                  <div class="aboutinstructor d-flex ">
+                      <a href="{{user_url}}"><img src="{{userimage}}" class="profileimage rounded-circle" alt="{{firstname}} {{lastname}}"height="60"></a>
+                  </div>
+                </div>
+              {{/ courseteacher}}
+            </div>
+            {{/ hascourseteacher}}
+          </div>
+        </div>
+      {{/ courses}}
+      {{/ hascourses}}
+
+
+    </div>
+ 
+   
+      <br>
+      <br>
+      <div class="container">
+            <div class="pagination" style="display: float-root">
+
+             {{{pagi}}}
+           <!--  <a href="#">&laquo;</a>
+            <a href="#"class="active">1</a>
+            <a href="#" >2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a> -->
+          </div>
+      </div>
+  </div>
+</section>
+ 
+{{# hascategory }}
+<section id="coursecategory" class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"><br>
+        <h3 class="text-center text-uppercase">{{{categorycoursename}}}</h3>
+        <!-- <p class="text-center text-muted"> {{{categorycoursedescription}}} </p> --><br>
+      </div>
+    </div>
+    <div class="row">
+      {{# category}}
+      <div class="col-md-4 mt-3">
+        <a href="{{url}}">
+        <div class="category border rounded">
+          <img src="{{{image}}}" class="img-fluid ">
+          <div class="caption_text">
+          <h5 class="my-2 text-uppercase">{{{name}}}</h5>
+          <p>{{{description}}}</p>
+        </div>
+      </div>
+        </a>
+      </div>
+      {{/ category}}
+    </div>
+  </div>
+</section>
+{{/ hascategory }}
+{{# hasteachers}}
+<section id="teachers" class="my-5">
+  <div class="container">
+    <div class="row"> <div class="col-md-12"> <h3 class="text-center text-uppercase"> OUR TOP TRENDING TUTORS </h3><br> </div> </div>
+    <div class="row owl-carousel carousel-main">
+    {{# teachers}}
+      <div class="col-md-12 mt-3">
+        <div class="teacher-header">
+          <img src="{{{profileurl}}}" class="img-fluid">
+          <div class="teacher-caption p-2">
+          <a href="{{{tutor_url}}}" target="_blank"><h5 class="my-2">{{{firstname}}} {{{lastname}}}</h5></a>
+          <p class="text-muted">{{{institution}}}</p>
+        </div>
+        </div>
+      </div>
+    {{/ teachers}}
+    </div>
+  </div>
+</section>
+
+
+
+{{/ hasteachers}}
+
+<!-- <section id="extrasection">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="my-2">
+        </p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+{{>local_courses/coursefooter}}
+
+<style>
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #2a2356;
+  color: white;
+  border: 1px solid #2a2356;
+}
+.wide-61 {
+    padding: 5em;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+
+
+<script type="text/javascript">
+  
+  var value = $('#hiddenfield').val();
+  console.log(value);
+  $('select>option[value="' + value + '"]').prop('selected', true);
+
+  var value = $('#hiddenfield1').val();
+  console.log(value);
+  $('#searchbycatid option[value="' + value + '"]').prop('selected', true);
+
+</script>
+ <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  jQuery(function() {
+        jQuery(this).bind("contextmenu", function(event) {
+            event.preventDefault();
+        });
+    });
+});
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/60d32da77f4b000ac0392300/1f8sekm9q';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<style type="text/css">
+a:focus, a:hover {
+    text-decoration: none!important;
+}
+    @media only screen and (max-width: 600px) {
+        section.sec_tab {
+    padding: 0px!important;
+}
+.heading.text-center h2 {
+    width: 100%;
+    margin: 10px;
+    font-size: 25px;
+}
+li.nav-item {
+    width: 100%;
+    margin-top: 2%;
+}
+a.t_hree_btn {
+    padding: 8px 5px 8px 5px!important;
+    background-color: #2a2356;
+    border-radius: 3px;
+    border: 1px solid #2a2356!important;
+    font-weight: bold;
+    color: #fff!important;
+    margin-right: 28px;
+    margin-top: 2%;
+    display: inline-block;
+}
+    
+</style>

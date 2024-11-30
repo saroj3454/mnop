@@ -1,0 +1,209 @@
+{{>local_courses/courseheader}}
+
+<section id="registration" class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="my-5"></h2>
+      </div>
+    </div>
+        <h1 style="text-align: center; padding-top: 100px;">This page is under construction</h1>
+  
+  </div>
+</section>
+
+<style type="text/css">
+  input { 
+    text-transform: uppercase;
+}
+
+#register-form p{
+  margin-bottom: 3px;
+}
+</style>
+
+{{>local_courses/coursefooter}}
+
+
+<script type="text/javascript">
+$("#tutors_area").hide();
+// <![CDATA[
+jQuery(document).ready(function(){
+
+
+$('input:radio[name="role_type"]').change(function(){
+    if($(this).val() == 'tutor'){
+       $("#tutors_area").show();
+    }
+    else{
+      $("#tutors_area").hide();
+    }
+
+});
+
+});
+
+// ]]>
+</script>
+
+<script type="text/javascript">
+                function submitRegistrationForm() {
+                    var valid;  
+                    valid = validateRegistrationForm();
+                    if(valid) {
+                        jQuery.ajax({
+                            url: "../courses/contactus11.php",
+                            data:'contactName='+$("#s_name").val()+'&contactEmail='+
+                            $("#s_email").val()+'&contactMessage='+
+                            $("#s_message").val(),
+                            type: "POST",
+                            success:function(data){
+                                //alert(data);
+                                $("#mail-status").html(data);
+                                $('#contactform')[0].reset();
+                            },
+                            error:function (){}
+                        });
+                    }
+                }
+
+
+                function validateRegistrationForm() {
+                    var valid = true;   
+                    $(".cnt_info").css('border-color','');
+                    $(".err-info").html('');
+
+                     if(!$("#cnt_name_title").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_name_title").css('border-color','red');
+                        //$("#cnt_fname").attr("placeholder","First Name is required");
+                         valid = false;
+                    }
+                    if(!$("#cnt_fname").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_fname").css('border-color','red');
+                        //$("#cnt_fname").attr("placeholder","First Name is required");
+                         valid = false;
+                    }
+
+
+                    if(!$("#cnt_mname").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_mname").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#cnt_lname").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_lname").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#cnt_fathername").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_fathername").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+
+                    if(!$("#cnt_phone").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_phone").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+
+                     else if(!$("#cnt_phone").val().match(/^[0-9]{10}$/)) {
+                         $("#err-phone").html("(This is not a valid Phone Number)");
+                        $("#cnt_phone").css('border-color','red');
+                        $("#err-phone").css('color','red');
+                        valid = false;
+                    }
+
+                    if(!$("#cnt_email").val()) {
+                        $("#cnt_email").css('border-color','red');
+                        $("#err-email").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#cnt_email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                         $("#err-email").html("(This is not a valid email address.)");
+                        $("#cnt_email").css('border-color','red');
+                        $("#err-email").css('color','red');
+                        valid = false;
+                    }
+
+                     if(!$("#cnt_cemail").val()) {
+                        
+                        $("#cnt_cemail").css('border-color','red');
+                        $("#err-cemail").css('color','red');
+                        valid = false;
+                    }
+
+                     if(!$("#cnt_cemail").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                        $("#err-cemail").html("(This is not a valid email address.)");
+                        $("#cnt_cemail").css('border-color','red');
+                        $("#err-cemail").css('color','red');
+                        valid = false;
+                    }
+
+                    if($("#cnt_email").val()!=$("#cnt_cemail").val()){
+
+                       $("#err-cemail").html("(Confirm email does not match.)");
+                        $("#cnt_cemail").css('border-color','red');
+                        $("#err-cemail").css('color','red');
+                        valid = false;
+
+                    }
+
+                     if(!$("#cnt_city").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_city").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                      if(!$("#cnt_level_studies").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_level_studies").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                      if(!$("#cnt_name_institution").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_name_institution").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                      if(!$("#cnt_institution_location").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_institution_location").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                  if($('input[name="role_type"]:checked').val()=='tutor'){
+
+                      if(!$("#cnt_upload_doc").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_upload_doc").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                    if(!$("#cnt_upload_video").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_upload_video").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+
+                  }
+
+                    return valid;
+                }
+            </script>
+
+ 

@@ -1,0 +1,372 @@
+{{>local_courses/courseheader}}
+
+<section id="registration" class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="my-5">Registration</h2>
+      </div>
+    </div>
+
+    <form method="post" id="reg_form" enctype="multipart/form-data">
+    <div class="row">
+
+        <div class="col-md-3 col-xs-3"></div>
+        <div class="col-md-6 col-xs-6" align="center" style="border-bottom: 5px solid #0c9ddc;"><h3 class="my-3" style="color:#a04b9e;">NEW USER REGISTRATION</h3></div><div class="col-md-3 col-xs-3"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+      <div class="col-md-6 mt-3">
+         <br>
+         <div class="row">
+            <div class="col-md-12">
+                <div id="register-form">
+                  <div name="registerForm" class="row register-form">
+                         <div class="col-md-4 col-xs-4"><p>Registering As:</p></div>
+                              <div class="col-md-4 col-xs-4"><input id="cnt_radio1" type="radio" checked="" value="student" name="role_type"  required="">&nbsp;&nbsp;STUDENT</div>
+                              <div class="col-md-4 col-xs-4"><input id="cnt_radio2" type="radio" name="role_type" value="tutor" required="">&nbsp;&nbsp;TUTOR</div>
+
+                               <div id="input-name" class="col-md-12">
+                              <p>Title</p>
+                                <select id="cnt_name_title" name="name" class="form-control cnt_info">
+                                  <option value="">----Select Title----</option>
+                                  <option value="Ms">Ms</option>
+                                  <option value="Smt">Smt</option>
+                                  <option value="Dr">Dr</option>
+                                  <option value="Mr">Mr</option>
+                                  <option value="Sh">Sh</option>
+                                </select>
+                            </div>
+                            
+                             <div id="input-name" class="col-md-12 mt-3">
+                              <p>First Name* <span style="font-size: 11px;"></p>
+                              <input id="cnt_fname" type="text" name="name" class="form-control cnt_info" maxlength="15" placeholder="First Name*" required=""> 
+                            </div>
+                            <div id="input-name" class="col-md-12">
+                              <p>Middle Name</p>
+                              <input id="cnt_mname" type="text" name="name" class="form-control cnt_info" maxlength="15" placeholder="Middle Name"> 
+                            </div>
+                            <div id="input-name" class="col-md-12">
+                              <p>Last Name*</p>
+                              <input id="cnt_lname" type="text" name="name" class="form-control cnt_info" maxlength="15" placeholder="Last Name*" required=""> 
+                            </div>
+                            <div id="input-name" class="col-md-12">
+                              <p>Father's Name*</p>
+                              <input id="cnt_fathername" type="text" name="name" class="form-control cnt_info" maxlength="30" placeholder="Father's Name*" required=""> 
+                            </div>
+
+                              <!-- Form Input -->
+                            <div id="input-phone" class="col-md-12" style="margin-bottom: 22px;">
+                              <p>Phone Number*</p>
+                              <input id="cnt_phone" type="text" style="margin-bottom: 0px;" name="cntphone" maxlength="10" title="10 Digits only" class="form-control cnt_info" placeholder="Enter Your Phone Number*" required="" pattern="[0-9]{10}"> 
+                              <span id="err-phone" class="err-info"></span>
+                            </div>  
+
+                            <!-- Form Input -->   
+
+                            <div id="input-email" class="col-md-12" style="margin-bottom: 22px;">
+                              <p>Email*</p>
+                              <input id="cnt_email" type="email" style="margin-bottom: 0px;" name="email" title="xyz@example.com" class="form-control cnt_info" placeholder="abc@xyz.com" required=""> 
+                              <span id="err-email" class="err-info"></span>
+                            </div>
+                            
+
+                             <div id="input-email" class="col-md-12" style="margin-bottom: 22px;">
+                              <p>Confirm Email*</p>
+                              <input id="cnt_cemail" type="email" style="margin-bottom: 0px;" name="cemail" class="form-control cnt_info" placeholder="abc@xyz.com" required=""> 
+                              <span id="err-cemail" class="err-info"></span>
+                            </div>
+                            
+
+                             <div id="input-name" class="col-md-12">
+                              <p>City/Nearest Town*</p>
+                                <input id="cnt_city" type="text" name="city" class="form-control cnt_info" placeholder="Enter Your City*" required=""> 
+                            </div>
+                                                                          
+                            <!-- Form Message -->
+                            <div class="col-md-12 register-form-msg text-center">
+                              <span class="loading"></span>
+                            </div>  
+                                                          
+                        </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+       <div class="col-md-6 mt-3 ">
+          <br>
+         <div class="row">
+            <div class="col-md-12">
+                <div id="register-form">
+                  <div name="registerForm" class="row register-form">
+                            <div id="input-name" class="col-md-12">
+                              <p>Level of Studies*</p>
+                                <select id="cnt_level_studies" name="name" class="form-control cnt_info">
+                                  <option value="">----Select Level----</option>
+                                  <option value="Level One">Level One</option>
+                                  <option value="Level Two">Level Two</option>
+                                  <option value="Level Three">Level Three</option>
+                                </select>
+                            </div>
+                             
+                             <!-- Form Input -->       
+                            <div id="input-email" class="col-md-12">
+                              <p>Name of Institution</p>
+                              <input id="cnt_name_institution" type="text"  class="form-control cnt_info" placeholder="Name of Institution" required=""> 
+                            </div>
+
+                             <!-- Form Input -->       
+                            <div id="input-email" class="col-md-12">
+                              <p>Institution Location- City/Town</p>
+                              <input id="cnt_institution_location" type="text"  class="form-control cnt_info" placeholder="Institution Location/City" required=""> 
+                            </div>
+
+
+
+                            <div id="tutors_area" class="col-md-12">
+                              <hr>
+                            <div class="row">
+                               <div class="col-md-12" align="center"><p>For Tutors Only </p></div>
+                               <br>
+                               <br>
+                              <div class="col-md-12">
+                                <p>Upload Documents</p>
+                              <input id="cnt_upload_doc" type="file"  class="form-control cnt_info" placeholder="Institution Location/City" required=""> 
+                              </div>
+                              <div class="col-md-12">
+                                <p>Upload Video</p>
+                              <input id="cnt_upload_video" type="file"  class="form-control cnt_info" placeholder="Institution Location/City" required=""> 
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="col-md-12 mb-20">
+                                  <input type="checkbox" name="email" required="">&nbsp;&nbsp;Agree to Our Terms & Conditions and Privacy Policy
+                          </div>
+                          
+
+                            <!-- Form Button -->
+                            <div class="col-md-12 form-btn" align="center">  
+                              <button onClick="submitRegistrationForm();" style="width: 100%" type="button" class="btn btn-md btn-rose tra-black-hover submit">Register</button> 
+                            </div>
+                            <div class="col-md-12" align="center">
+                              <span>Already have an account&nbsp;?<a href=""> Login </a></span>
+                            </div>
+                            
+                                                                          
+                            <!-- Form Message -->
+                            <div class="col-md-12 register-form-msg text-center">
+                              <span class="loading"></span>
+                            </div>  
+                                                          
+                        </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    
+    </div>
+  </form>
+  </div>
+</section>
+
+<style type="text/css">
+  input { 
+    text-transform: uppercase;
+}
+
+#register-form p{
+  margin-bottom: 3px;
+}
+</style>
+
+{{>local_courses/coursefooter}}
+
+
+<script type="text/javascript">
+$("#tutors_area").hide();
+// <![CDATA[
+jQuery(document).ready(function(){
+
+
+$('input:radio[name="role_type"]').change(function(){
+    if($(this).val() == 'tutor'){
+       $("#tutors_area").show();
+    }
+    else{
+      $("#tutors_area").hide();
+    }
+
+});
+
+});
+
+// ]]>
+</script>
+
+<script type="text/javascript">
+                function submitRegistrationForm() {
+                    var valid;  
+                    valid = validateRegistrationForm();
+                    if(valid) {
+                        jQuery.ajax({
+                            url: "../courses/contactus11.php",
+                            data:'contactName='+$("#s_name").val()+'&contactEmail='+
+                            $("#s_email").val()+'&contactMessage='+
+                            $("#s_message").val(),
+                            type: "POST",
+                            success:function(data){
+                                //alert(data);
+                                $("#mail-status").html(data);
+                                $('#contactform')[0].reset();
+                            },
+                            error:function (){}
+                        });
+                    }
+                }
+
+
+                function validateRegistrationForm() {
+                    var valid = true;   
+                    $(".cnt_info").css('border-color','');
+                    $(".err-info").html('');
+
+                     if(!$("#cnt_name_title").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_name_title").css('border-color','red');
+                        //$("#cnt_fname").attr("placeholder","First Name is required");
+                         valid = false;
+                    }
+                    if(!$("#cnt_fname").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_fname").css('border-color','red');
+                        //$("#cnt_fname").attr("placeholder","First Name is required");
+                         valid = false;
+                    }
+
+
+                    if(!$("#cnt_mname").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_mname").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#cnt_lname").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_lname").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#cnt_fathername").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_fathername").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+
+                    if(!$("#cnt_phone").val()) {
+                        //$("#contactName-info").html("(required)");
+                        $("#cnt_phone").css('border-color','red');
+                        //$("#contactName-info").css('color','red');
+                        valid = false;
+                    }
+
+                     else if(!$("#cnt_phone").val().match(/^[0-9]{10}$/)) {
+                         $("#err-phone").html("(This is not a valid Phone Number)");
+                        $("#cnt_phone").css('border-color','red');
+                        $("#err-phone").css('color','red');
+                        valid = false;
+                    }
+
+                    if(!$("#cnt_email").val()) {
+                        $("#cnt_email").css('border-color','red');
+                        $("#err-email").css('color','red');
+                        valid = false;
+                    }
+                    if(!$("#cnt_email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                         $("#err-email").html("(This is not a valid email address.)");
+                        $("#cnt_email").css('border-color','red');
+                        $("#err-email").css('color','red');
+                        valid = false;
+                    }
+
+                     if(!$("#cnt_cemail").val()) {
+                        
+                        $("#cnt_cemail").css('border-color','red');
+                        $("#err-cemail").css('color','red');
+                        valid = false;
+                    }
+
+                     if(!$("#cnt_cemail").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                        $("#err-cemail").html("(This is not a valid email address.)");
+                        $("#cnt_cemail").css('border-color','red');
+                        $("#err-cemail").css('color','red');
+                        valid = false;
+                    }
+
+                    if($("#cnt_email").val()!=$("#cnt_cemail").val()){
+
+                       $("#err-cemail").html("(Confirm email does not match.)");
+                        $("#cnt_cemail").css('border-color','red');
+                        $("#err-cemail").css('color','red');
+                        valid = false;
+
+                    }
+
+                     if(!$("#cnt_city").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_city").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                      if(!$("#cnt_level_studies").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_level_studies").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                      if(!$("#cnt_name_institution").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_name_institution").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                      if(!$("#cnt_institution_location").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_institution_location").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                  if($('input[name="role_type"]:checked').val()=='tutor'){
+
+                      if(!$("#cnt_upload_doc").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_upload_doc").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+                    if(!$("#cnt_upload_video").val()) {
+                        //$("#contactEmail-info").html("(required)");
+                        $("#cnt_upload_video").css('border-color','red');
+                        //$("#contactEmail-info").css('color','red');
+                        valid = false;
+                    }
+
+
+                  }
+
+                    return valid;
+                }
+                <script>
+                  window.addEventListener("contextmenu", function(event){
+                  event.preventDefault();
+                  //alert('Right Click is Disabled');    
+                  }, false);
+            </script>
+
+ 

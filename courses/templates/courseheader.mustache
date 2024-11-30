@@ -1,0 +1,169 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_moove/frontpage_guest
+
+    Guest frontpage template.
+
+    Moove frontpage guest layout template.
+
+    Context variables required for this template:
+    * sitename - The name of the site
+    * output - The core renderer for the page
+    * bodyattributes - attributes for the body tag as a string of html attributes
+
+    Example context (json):
+    {
+        "sitename": "Moodle",
+        "output": {
+            "doctype": "<!DOCTYPE html>",
+            "page_title": "Test page",
+            "favicon": "favicon.ico",
+            "main_content": "<h1>Headings make html validators happier</h1>"
+         },
+        "bodyattributes":"",
+        "cansignup": true,
+        "bannerheading": "Content string banner heading",
+        "bannercontent": "Content string banner content",
+        "shoulddisplaymarketing": true
+    }
+}}
+{{{ output.doctype }}}
+<html {{{ output.htmlattributes }}}>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="" content=""/>
+        <meta name="author" content=""/>    
+        <meta name="description" content=""/>
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- SITE TITLE -->
+        <title> Course </title>                      
+        <!-- FAVICON AND TOUCH ICONS  -->
+        <link rel="shortcut icon" href="{{{ favicon }}}" >
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">        
+        <!-- BOOTSTRAP CSS -->
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/bootstrap.min.css" rel="stylesheet">
+        <!-- FONT ICONS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">       
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/flaticon.css" rel="stylesheet">
+        <!-- PLUGINS STYLESHEET -->
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/menu.css" rel="stylesheet"> 
+        <link id="effect" href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/magnific-popup.css" rel="stylesheet">   
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/flexslider.css" rel="stylesheet">
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/owl.theme.default.min.css" rel="stylesheet">
+        <!-- ON SCROLL ANIMATION -->
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/animate.css" rel="stylesheet">
+        <!-- TEMPLATE CSS -->
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/style.css" rel="stylesheet">
+        <!-- RESPONSIVE CSS -->
+        <link href="{{config.wwwwroor}}/theme/moove/scss/frontpage/css/responsive.css" rel="stylesheet"> 
+        {{! custom css }}
+        <link href="{{config.wwwwroor}}/local/courses/css/custom.css" rel="stylesheet"> 
+    </head>
+    <body>
+        <!-- PRELOADER SPINNER
+        ============================================= -->       
+        <!-- <div id="loader-wrapper">
+            <div id="loading">
+                <div id="loading-center">
+                    <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- PAGE CONTENT
+        ============================================= -->   
+        <div id="page" class="page">
+            <!-- HEADER
+            ============================================= -->
+            <header id="header" class="header white-menu navbar-dark">
+                <div class="header-wrapper">
+                    <!-- MOBILE HEADER -->
+                    <div class="wsmobileheader clearfix">   
+                        <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>          
+                         <span class="smllogo" style="margin-top: 7px;">
+
+                            <a href="{{{ config.wwwroot }}}" class="logo-black {{# logo }}has-logo{{/ logo }}
+                                    {{^ logo }}
+                                        d-none d-sm-inline
+                                    {{/ logo }}
+                                        ">
+                                         <img src="{{logo}}" alt="{{sitename}}">
+                                   <!--  {{# logo }}
+                                        <span class="logo d-none d-sm-inline">
+                                            <img src="{{logo}}" alt="{{sitename}}">
+                                        </span>
+                                    {{/ logo }}
+                                    {{^ logo }}
+                                        <span class="site-name d-none d-md-inline">{{{ sitename }}}</span>
+                                    {{/ logo }} -->
+                            </a>
+                        </span>
+                    </div>
+                    <!-- NAVIGATION MENU -->
+                    <div class="wsmainfull menu clearfix">
+                        <div class="wsmainwp clearfix">
+                            <!-- LOGO IMAGE -->
+                            <div class="desktoplogo">
+                            <a href="{{{ config.wwwroot }}}" class="logo-black {{# logo }}has-logo{{/ logo }}
+                                    {{^ logo }}
+                                        d-none d-sm-inline
+                                    {{/ logo }}
+                                        ">
+                                    {{# logo }}
+                                        <span class="logo d-none d-sm-inline">
+                                            <img src="{{logo}}" alt="{{sitename}}">
+                                        </span>
+                                    {{/ logo }}
+                                    {{^ logo }}
+                                        <span class="site-name d-none d-md-inline">{{{ sitename }}}</span>
+                                    {{/ logo }}
+                            </a>
+                            </div>
+                            <!-- MAIN MENU -->
+                            <nav class="wsmenu clearfix">
+                                <ul class="wsmenu-list">
+                                    <!-- SIMPLE NAVIGATION LINK -->
+                                   	<li class="nl-simple" aria-haspopup="true"><a href="/index.php">HOME</a></li>
+                                    <li aria-haspopup="true"><a href="#">COURSES <span class="wsarrow"></span></a>
+                                        <ul class="sub-menu">
+                                           {{#coursesmenu}}
+                                           <li aria-haspopup="true"><a href="/local/courses/index.php?categoryid={{{id}}}">{{{name}}}</a></li>
+                                           {{/coursesmenu}}
+                                        </ul>
+                                    </li>   <!-- END DROPDOWN MENU -->
+                                    <li aria-haspopup="true"><a href="/local/courses/become-a-tutor.php">BECOME A TUTOR</a> </li>
+
+                                    <li aria-haspopup="true" class="nl-simple"><a href="/local/blogs/blog.php">ARTICLES/BLOGS</a> </li>
+                                    <li class="nl-simple" aria-haspopup="true"><a href="/resources">RESOURCES</a></li>
+                                        {{#islogedin_user}}
+                                        <li class="nl-simple sfsfsew" aria-haspopup="true"><a href="/login/signup.php?">JOIN US</a></li> 
+                                        {{/islogedin_user}}
+
+
+                                    {{#logintoaboutus}}<li class="nl-simple loginout" aria-haspopup="true"><a href="/login/index.php">LOGIN</a></li>{{/logintoaboutus}}
+                                    {{{user_menu}}}
+                                </ul>
+                            </nav>  <!-- END MAIN MENU -->
+                        </div>
+                    </div>  <!-- END NAVIGATION MENU -->
+                </div>     <!-- End header-wrapper -->
+            </header>   <!-- END HEADER -->
+

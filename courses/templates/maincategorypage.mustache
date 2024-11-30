@@ -1,0 +1,319 @@
+{{#showslider}}
+<!-- HERO-1
+	============================================= -->   
+	<div id="particles-js"></div>
+	<section id="hero-1" class="hero-section division">
+		<!-- SLIDER -->
+		<div class="slider">
+			<ul class="slides">
+				{{#sliders}}
+				<li id="slide-{{{ key }}}">
+					<!-- Background Image -->
+					<img src="{{{ image }}}" alt="{{{ caption }}}">
+					<!-- Image Caption -->
+					<div class="caption d-flex align-items-center left-align">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-8 col-lg-7">
+									<div class="caption-txt">
+										<!-- Title -->
+										{{#title}}<h2 class="h2-sm">{{{ title }}}</h2>{{/title}}
+										<!-- Text -->
+										{{#description}}<p class="p-lg">{{{ description }}}</p>{{/description}}                                          
+										<!-- Button -->
+										{{#title}} <a href="/local/courses/" class="btn btn-md btn-rose tra-black-hover0">View Popular Courses</a>{{/title}}
+									</div>
+								</div>
+							</div>  <!-- End row -->
+						</div>  <!-- End container -->
+					</div>  <!-- End Image Caption -->
+
+				</li>   <!-- END SLIDE #1 -->
+				{{/sliders}}
+			</ul>
+		</div>  <!-- END SLIDER -->
+	</section>  <!-- END HERO-1 --> 
+	{{/showslider}}
+	{{^ showslider}}
+	<section class="slider">
+
+	</section>
+	{{/ showslider}}
+	<section id="categoryname">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>{{{catagoryname}}}</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	{{#description}}
+	<section class="container my-5">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="h3"> About the category </h3>
+				<p>
+					{{{description}}}
+				</p>                                  
+			</div>
+		</div>
+	</section>
+	{{/description}}
+
+	{{# showtrend}}
+	<section id="recenttredinthecategory" class="my-5">
+		<div class="container">
+			<h3 class="h3 my-2 text-center"> Recent Trends in Category </h3>
+			<div class="row">
+				{{# recenttrends}}
+				<div class="col-md-3">
+					<a href="{{{url}}}">	
+						<div class="p-3 ml-2 recenttrends bg-white rounded">
+							<div class="details">
+								<h5>{{{fullname}}}</h5>
+
+								<img src="{{{image}}}" title="{{{fullname}}}" alt="{{{fullname}}}" class="img-fluid img-thumnail"  />
+								<br>
+								<p class="details">{{{summary}}}</p>	
+							</div>
+						</div>
+					</a>
+				</div>
+				{{/ recenttrends}}
+			</div>
+		</div>
+	</section>
+	{{/ showtrend}}
+	<!-- About a category  -->
+	<section class="About a category">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="h3 text-center my-3"> </h3>
+					<p> 
+					</p>
+				</div>
+			</div>
+		</div>
+	</section >
+	{{#showsubcat}}
+	<section id="subcategorycourseslist" class="container my-5" >
+		<div class="row">
+			{{#subcat}}
+			{{#showcat}}
+			<div class="col-md-12" style="margin-bottom: 50px;"> <div class="linkscats">
+			 <h3 class="h3 text-left my-3">Popular Courses In {{{name}}} </h3>
+			  <a href="/local/courses/index.php?categoryid={{{id}}}">VIEW ALL</a></div>
+			<div class="row">
+				{{#getcoursesWithCategory}}
+				<div class="col-md-3 ">
+					<div class="course_section pre_nursery tooltip_hover">
+					<a href="{{coursedetails}}">
+						<h5 class="h5 text-left my-3 coursename">{{{fullname}}}</h5>
+						<img src="{{courseimage}}" class="courseimage" width="250">
+						<div class="tooltip_content tooltip_mobile">
+										<a class="vrz_heading">{{{fullname}}}</a><br>
+										<div class="best">
+											<div class="best_text"> Bestseller</div>
+											<span class="vritle">Updated<span class="vritle_xs"></span>
+										</span>
+									</div>
+									<div class="vrt_content">{{{summary}}}</div>
+									<div class="course-details" align="center"><a href="{{enroll}}" class=" btn btn-rose black-hover">Enroll Now</a></div>
+								</div>
+
+						<div class="teachers">
+							{{# teachers}}
+							<div class="single-teacher-profile">  
+								<div class="aboutinstructor d-flex">
+									<a href="{{{user_url1}}}" target="_blank"><img src="{{userimage}}"
+									title="{{firstname}} {{lastname}}" 
+									class="profileimage rounded-circle"  
+									alt="{{firstname}} {{lastname}}" 
+									height="60"></a>
+								</div>
+							</div>
+							{{/ teachers}}
+						</div>
+
+						<p class="course_description" >{{{summary}}}</p>
+						<p class="course_highlights"></p>
+						<p class="total_enrolled"><strong>Enrolled Students:</strong>  {{enrollStudent}}</p>
+						<div class=" right">
+							<span>Price:&nbsp;{{course_price}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<a href="{{enroll}}" class=" btn btn-rose black-hover">Enroll Now</a>
+							<!-- <a href="{{enrolled}}" class=" btn btn-rose black-hover">Enroll Now</a> -->
+						</div>
+					</a>
+					</div>
+				</div>
+				{{/getcoursesWithCategory}}
+			</div>
+		</div>
+		{{/showcat}}
+		{{/subcat}}
+	</div>
+</section>
+{{/showsubcat}}
+
+<section id="latestcoursesincategory" class="my-5">
+	<div class="container">
+		<div class="row" >
+			<div class="col-md-12"> 
+				<div class="linkscats"> <h3 class="h3 text-left my-3">Latest courses</h3> </div>
+
+				<div class="row owl-carousel carousel-main" data-wrap="false" id="hover_zindex">
+					{{#LatestCourses}}
+					<div class="col-md-12 mb-5">
+						<a href="{{coursedetails}}">
+								<div class="course_section tooltip_hover">
+									<img src="{{courseimage}}" class="" width="250">
+									<div class="tooltip_content tooltip_mobile">
+										<a class="vrz_heading">{{{fullname}}}</a><br>
+										<div class="best">
+											<div class="best_text"> Bestseller</div>
+											<span class="vritle">Updated<span class="vritle_xs"> {{update_date}}</span></span>
+
+										</div>
+										<div class="vrzite-text"><span> {{level}} </span></div>
+										<div class="vrt_content">{{{summary}}}</div>
+										{{! <div class="">
+											<ul class="vrt block-list">
+												<li><div class="vrt list-item"><span class="udlite-block-list-item-content">Master Machine Learning on Python &amp; R</span></div></li>
+												<li><div class="vrt list-item"><span class="udlite-block-list-item-content">Have a great intuition of many Machine Learning models</span></div></li>
+												<li><div class="vrt list-item"><span class="vrtitem-content">Make accurate predictions</span></div></li>
+											</ul>
+										</div> }}
+										<div class="course-details" align="center"><a href="{{enroll}}" class=" btn btn-rose black-hover">Enroll Now</a></div>
+									</div>
+
+									<h5 class="h5 text-left my-3 coursename">{{{fullname}}}</h5>
+									{{#teachers}}
+									<label class="teacher"><a href="{{{user_url1}}}" target="_blank">{{username}}</a></label>
+									{{/teachers}}
+									<!-- <p class="course_description">{{{summary}}}</p> -->
+									<!-- <p class="course_highlights"></p> -->
+									<p class="total_enrolled"> <strong> Enrolled Students : </strong> {{enrollStudent}}</p>
+									<div class=" right">
+										<span>Price:&nbsp;{{course_price}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="{{enroll}}" class=" btn btn-rose black-hover">Enroll Now</a>
+									</div>
+								</div>
+						</a>
+					</div>
+					{{/LatestCourses}}
+					<div class="col-md-12 mb-5 ">
+						<div class="course_section tooltip_hover vrt_all">
+						<div class="lastslide">
+							<a href="/local/courses/index.php"><button class="btn-primary">VIEW ALL</button></a>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{#showteachers}}
+<section id="instrutorInCategory" class="container my-5">
+	<div class="row">
+		<div class="col-md-12"> 
+			<div class="mb-4">
+				<h3 class="h3 text-left my-3"> OUR TOP INSTRUCTORS IN THIS CATEGORY </h3>
+			</div>
+			<div class="row pt-4">
+				{{#teachersInThisCategory}}
+				<div class="col-md-3 col-6 mb-4">
+					<div class="course_section  ">
+						<div class="img-show figure-img">
+							<a href="{{user_url}}"><img src="{{profileurl}}" class="courseimage img-fluid"></a><br>
+						</div>
+						<div class="course_text btn btn-primary">
+						<a href="{{{user_url1}}}" target="_blank"><h5 class="h5 text-left my-3 coursename">{{{firstname}}} {{{lastname}}}</h5></a>
+						<!--<p class="course_description">{{{description}}}</p>-->
+						<p class="course_highlights"></p>
+						<div class="total_enrolled">TOTAL COURSES {{totalCourses}}</div>
+						<div class="total_enrolled">TOTAL ENROLLMENTS {{totalstudent}}</div>
+					</div>
+					</div>
+				</div>
+				{{/teachersInThisCategory}}
+			</div>
+		</div>
+	</div>
+</section>
+{{/showteachers}}
+
+<section class="container my-5">
+	<div class="row">
+		<div class="col-md-9">
+			<h3 class="h3"> TRENDING NEWS AND UPDATES</h3>
+			<p> 
+			</p>                                
+		</div>
+		<div class="col-md-3">
+			<h3 class="h3 my-2"> Important External links </h3>
+			<ul>
+				<li>   </li>
+				<li>   </li>
+				<li>  </li>
+				<li>   </li>
+				<li>  </li>
+				<li>   </li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section id="blogsection" class=" my-5">
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-12"> <h3 class="h3 text-center my-3">CATEGORY RELATED ARTICLES</h3></div>
+		</div>
+		<div class="row">
+			{{#get_blogs}}
+			<div class="col-md-3">
+			<div class="course_section">
+				<a href="{{blogdetails}}" title="{{{blog_title}}}">
+					<img src="{{blog_image}}" class="courseimage" width="250">
+					<div class="category_caption p-2">
+						<h6 class="h5 text-left my-3 coursename">{{{blog_title}}}</h6>
+						<p class="course_highlights">{{{summary}}}</p>
+						<p class="course_description">{{author_name}}</p>
+						<p class="course_description">{{categoryname}}</p>
+					</div>
+				</a>
+			</div>
+		</div>
+			{{/get_blogs}}
+		</div>
+	</div>
+</section>
+
+<section class=" my-5" id="category_content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<p>“Don’t say you don’t have enough time. You have exactly the same number of hours per day that were given to Helen Keller, Pasteur, Michelangelo, Mother Teresa, Leonardo da Vinci, Thomas Jefferson, and Albert Einstein.”
+					– H. Jackson Brown Jr.
+				</p>                                
+			</div>
+			<div class="col-md-2">
+				<div class="dotted_image">
+					<figure><img src="/theme/moove/pix/images/red-dotted-half-circle.png"></figure>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script>
+	
+</script>
+
+<!--  -->
+
+

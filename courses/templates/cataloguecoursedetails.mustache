@@ -1,0 +1,249 @@
+{{!
+    This file is part the Local Analytics plugin for Moodle
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_catalogue/cataloguecoursedetails
+
+    Template is used to show the list of course category.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+    
+    Context variables required for this template:
+    * Many more to come 
+
+    Example context (json):
+    { "siteid": UA-90210-15, "addition": 2, }
+}}
+<!-- Course details page -->
+{{>local_courses/courseheader}}
+{{#showslider}}
+<!-- <div id="particles-js"></div> -->
+<section id="hero-1" class="hero-section division">
+    <!-- SLIDER -->
+    <div class="slider">
+        <ul class="slides">
+             {{#slider}}
+            <li id="slide-{{{ key }}}">
+                <!-- Background Image -->
+                <img src="{{{ image }}}" alt="{{{ caption }}}">
+                <!-- Image Caption -->
+                <div class="caption d-flex align-items-center left-align">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-7">
+                                <div class="caption-txt">
+                                    <!-- Title -->
+                                    {{#title}}<h2 class="h2-sm">{{{ title }}}</h2>{{/title}}
+                                    <!-- Text -->
+                                    {{#description}}<p class="p-lg">{{{ description }}}</p>{{/description}}                                          
+                                    <!-- Button -->
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                     <a href="{{enrolled}}" class="btn btn-md btn-rose tra-black-hover0">Enroll Now</a>  </div>
+                                     <div class="col-md-6" align="right"> <a href="" class="btn btn-md btn-rose tra-black-hover0">Course Price:&nbsp;&nbsp;&nbsp;{{course_price}}</a></div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>  <!-- End row -->
+                    </div>  <!-- End container -->
+                </div>  <!-- End Image Caption -->
+
+            </li>   <!-- END SLIDE #1 -->
+            {{/slider}}
+        </ul>
+    </div>  <!-- END SLIDER -->
+</section>  <!-- END HERO-1 --> 
+{{/showslider}}
+{{^ showslider}}
+<section class="slider">
+  
+</section>
+{{/ showslider}}
+
+<!-- BREADCRUMB
+        ============================================= -->
+        <div id="breadcrumb" class="division">
+          <div class="container">
+            <div class="row">
+
+              <!-- BREADCRUMB NAV -->
+              <div class="col-md-12">
+                {{#singlecoursecategorydetails}}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="https://www.vrtuz.com">Home</a></li>
+                      <li class="breadcrumb-item"><a href="https://www.vrtuz.com/local/courses/index.php">Course</a></li>
+                      <li class="breadcrumb-item active" aria-current="page"><a href="{{{url}}}">{{{cat_name}}}</a></li>
+                    </ol>
+                </nav>
+                {{/singlecoursecategorydetails}}
+              </div> 
+            </div>   <!-- End row -->
+          </div>  <!-- End container -->    
+        </div>  <!-- END BREADCRUMB --> 
+
+   
+
+<section class="coursedetails  section-data-here ">
+
+  <div class="container">
+    
+    <div class="row my-3">
+        <div class="col-md-12">
+           <div class="p-2">
+                <div class="row">
+                <div class="col-md-12">
+                {{# coursedetails}} 
+                    <h2> {{fullname}} </h2> 
+                {{/ coursedetails}}   
+                </div>
+                <div class="col-md-12">
+                    <h4> About Course </h4>
+                    {{# coursedetails}} 
+                    <div class="course-descriptions p-2 text-justify">
+                        {{{summary}}}
+                        
+                    </div>
+                    {{/ coursedetails}}
+                </div>
+            </div>
+           </div>
+           {{#hassections}}
+           <div class="sectiondetails p-2 my-2">
+               {{#sectiondetails}}
+               <div class="lessons mt-3 mb-2">
+                <strong class="bg-primary border text-white px-4 py-2 rounded"> {{sectionname}} </strong>
+                    {{#sectiondata}}
+                        <ul>
+                            <li class="p-2 my-3 list-group-item">
+                                <a href="{{module_url}}" class="text-muted text-muted d-flex justify-content-start my-2 text-decoration-none">
+                                    <img src="{{config.wwwroot}}/theme/image.php?theme=moove&amp;component={{modulename}}&amp;image=icon" 
+                                    class="iconlarge activityicon mr-3" 
+                                    alt="" 
+                                    role="presentation" 
+                                    aria-hidden="true">
+                                    <p class="font-weight-bold"> {{modulename_Name}} </p>
+                                </a>
+                            </li>
+                        </ul>    
+                    {{/sectiondata}}
+               </div>
+               {{/sectiondetails}}
+           </div>
+           {{/hassections}}
+        </div>
+        <div class="col-md-12">
+            
+            {{#hasinstructor}}
+                <h4 class="h4">OUR TOP INSTRUCTORS IN THIS COURSE</h4>
+                <div class="row">
+                  {{# instructor}}
+                  <div class="col-md-3">
+                      <div class="aboutinstructor d-flex my-2">
+                          <img src="{{userimage}}" class="profileimage rounded-circle"  alt="{{firstname}} {{lastname}} " height="60">
+                          <!-- <a href="{{{tutor_url}}}"><h5 class="my-2">{{{firstname}}} {{{lastname}}}</h5></a> -->
+                          <a href="{{{user_url}}}" target="_blank"><strong class="name my-auto ml-2"> {{firstname}} {{lastname}} </strong></a>
+                       </div>
+                  </div>
+                  {{/ instructor}}
+                  
+                </div>
+                <div class="col-md-12">
+
+
+        {{#coursedetails}}<p class="text-center text-muted"> {{{ summary }}} </p>
+         <div class="row">
+          <div class="col-md-6"><div class="course-details" style="text-align: right"><a href="{{enrolled}}" class="btn btn-rose black-hover">Enroll Now</a></div></div>
+          <div class="col-md-6" align="right"><h3>Course Price:&nbsp;&nbsp;&nbsp; {{course_price}}</h3></div>
+         </div>
+        
+         {{/coursedetails}}
+      </div>
+            {{/hasinstructor}}
+        </div>
+    </div>
+ 
+
+  </div>
+</section>
+<section id="coursecategory" class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center text-uppercase">RELATED COURSES</h3>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      {{# relatedCourses}}
+      <div class="col-md-4 mt-3">
+        <a href="{{coursedetails}}">
+          <div class="category">
+            <img src="{{{courseimage}}}" class="img-fluid img-thumnail">
+            <div class="course_category">
+            <h4 class="my-2 text-capitalize">{{{fullname}}}</h4>
+            <p>{{{summary}}}</p>
+          </div>
+        </div>
+        </a>
+      </div>
+      {{/ relatedCourses}}
+    </div>
+  </div>
+</section>
+{{# hasteachers}}
+<section id="teachers" class="my-5">
+  <div class="container">
+    <div class="row"> <div class="col-md-12"> <h3 class="text-center text-uppercase"> OUR TOP TRENDING TUTORS </h3> </div>  </div>
+    <div class="row owl-carousel carousel-main">
+    {{# teachers}}
+      <div class="col-md-12 mt-3">
+        <div class="teacher_tutor">
+          <img src="{{{profileurl}}}" class="img-fluid" height="250">
+          <div class="tutor-caption p-2">
+
+          <a href="{{{tutor_url}}}" target="_blank"><h5 class="my-2">{{{firstname}}} {{{lastname}}}</h5></a>
+          <p class="text-muted">{{{institution}}}</p>
+        </div>
+        </div>
+      </div>
+    {{/ teachers}}
+    </div>
+  </div>
+</section>
+{{/ hasteachers}}
+
+<section id="extrasection">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="my-2">
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+/*document.addEventListener("contextmenu", function (e){
+    e.preventDefault();
+}, false);*/
+</script>
+{{>local_courses/coursefooter}}
+

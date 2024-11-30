@@ -1,0 +1,14 @@
+
+<div class="container">
+<div class="row" id="dashboard-cards">
+{{^products}} "{{#str}} no_result_found, block_elearnified_catalogue {{/str}}" {{/products}}
+  {{#products}}
+      <div class='col-6 col-lg-3 col-md-4 col-sm-4 p-12 mt-4' id="lg-cards">
+      {{> block_elearnified_catalogue/product_thumb }}
+      </div>
+    {{/products}}
+  </div>
+    <div class="text-center w-100 py-3 my-5">
+		<a href="{{{ config.wwwroot }}}/local/ecommerce/" class="view-more-cards">View More</a>
+	</div>
+</div>

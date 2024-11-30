@@ -1,0 +1,88 @@
+<!-- Modal -->
+<div class="modal fade" id="added-product" tabindex="-1" role="dialog" aria-labelledby="added-product-label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content p-0">
+            <div class="d-flex justify-content-between added-header">
+                <h1>{{name}}</h1>
+                <button type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class='mr-1'>&times;</span>
+                    <span>{{#str}} view_product_close, local_ecommerce {{/str}}</span>
+                </button>
+            </div>
+            <div class="modal-body p-0 p-lg-5">
+
+                <div class="added-product-container">
+                    <div class='row'>
+                        {{#images}}
+                        <div class='col-6 col-lg-3 my-2 my-lg-0 d-flex align-items-center justify-content-center'>
+                            <div class='active-product'>
+                                <img src='{{url}}' alt='' />
+                            </div>
+                        </div>
+                        {{/images}}
+                    </div>
+                </div>
+                <div class='container'>
+                    <div class='row my-4'>
+                        <div class='col-12 col-lg-2'>
+                            <div class='title'>{{#str}} product_id, local_ecommerce {{/str}}</div>
+                        </div>
+                        <div class='col-12 col-lg-9 my-2 my-lg-0'>
+                            <div class='describe'>{{productid}}</div>
+                        </div>
+                    </div>
+                    <div class='row my-4'>
+                        <div class='col-12 col-lg-2'>
+                            <div class='title'>{{#str}} product_name, local_ecommerce {{/str}}</div>
+                        </div>
+                        <div class='col-12 col-lg-9 my-2 my-lg-0'>
+                            <div class='describe'>{{name}} </div>
+                        </div>
+                    </div>
+                    <div class='row my-4'>
+                        <div class='col-12 col-lg-2'>
+                            <div class='title'>{{#str}} product_type, local_ecommerce {{/str}}</div>
+                        </div>
+                        <div class='col-12 col-lg-9 my-2 my-lg-0'>
+                            <div class='describe'>{{ptname}}</div>
+                        </div>
+                    </div>
+                    <div class='row my-4'>
+                        <div class='col-12 col-lg-2'>
+                            <div class='title'>{{#str}} category, local_ecommerce {{/str}}</div>
+                        </div>
+                        <div class='col-12 col-lg-9 my-2 my-lg-0'>
+                            <div class='describe'>{{companyname}}</div>
+                        </div>
+                    </div>
+                    <div class='row my-4'>
+                        <div class='col-12 col-lg-2'>
+                            <div class='title'>{{#str}} details, local_ecommerce {{/str}}</div>
+                        </div>
+                        <div class='col-12 col-lg-4 my-2 my-lg-0'>
+                            <div class='description'>{{description}}</div>
+                        </div>
+                    </div>
+
+                    <div class='row price'>
+                        <div class='col-2 col-lg-2'>
+                            <div class='title'>{{#str}} price, local_ecommerce {{/str}}</div>
+                        </div>
+                        <div class='col-9 col-lg-9'>
+                            <div class='describe text-right text-lg-left'>{{price}}</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class='d-flex align-items-center justify-content-center m-3'>
+                    <a href='javascript:void(0);' editproduct data-id="{{id}}" class='edit-product'>{{#str}} edit_product_details, local_ecommerce {{/str}}
+                    </a>
+                </div>
+            </div>
+
+            <!-- End Modal -->
+        </div>
+    </div>
+</div>

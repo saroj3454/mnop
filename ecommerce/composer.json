@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jenn0pal/paymongo-php": "dev-master"
+    }
+}

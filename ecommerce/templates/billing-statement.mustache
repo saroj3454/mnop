@@ -1,0 +1,115 @@
+<div class="container billing-statement" recieptdata>
+  <div class="billing-header">
+  <div class="text-right w-100">
+    <button type="button" class="btn btn-primary" exportdata>Export Billing</button>
+  </div>
+    <div class="row align-items-center">
+        <div class="txt my-2 col-6 my-lg-0 col-lg-2"> {{#str}} billing_statement_no, local_ecommerce {{/str}}</div>
+        <div class="txt my-2 col-6 my-lg-0 col-lg-2">{{billingno}}</div>
+    </div>
+  </div>
+  
+
+  <div class="user-detals">
+      <div class="row my-2 align-items-center">
+        <div class="label-txt my-2 my-lg-0 col-6 col-lg-2"> {{#str}} billing_date, local_ecommerce {{/str}} : </div>
+        <div class="detail-txt my-2 my-lg-0 col-6 col-lg-9">{{billingdate}}</div>
+      </div>
+
+      <div class="row my-2 align-items-center">
+        <div class="label-txt my-2 my-lg-0 col-6 col-lg-2"> Department </div>
+        <div class="detail-txt my-2 my-lg-0 col-6 col-lg-9">{{departmentname}}</div>
+      </div>
+
+        <div class="row my-3 align-items-center">
+        <div class="label-txt my-2 my-lg-0 col-6 col-lg-2"> Chapter </div>
+        <div class="detail-txt my-2 my-lg-0 col-6 col-lg-9">{{chapters}}</div>
+      </div>
+
+
+        <div class="row my-2 align-items-center">
+        <div class="label-txt my-2 my-lg-0 col-6 col-lg-2"> Address 1 </div>
+        <div class="detail-txt my-2 my-lg-0 col-6 col-lg-9">{{address_1}}</div>
+      </div>
+
+        <div class="row my-2 align-items-center">
+        <div class="label-txt my-2 my-lg-0 col-6 col-lg-2"> Address 2 </div>
+        <div class="detail-txt my-2 my-lg-0 col-6 col-lg-9">{{address_2}}</div>
+      </div>
+
+        <div class="row my-3 align-items-center">
+        <div class="label-txt my-2 my-lg-0 col-6 col-lg-2">Phone number</div>
+        <div class="detail-txt my-2 my-lg-0 my-lg-0 col-6 col-lg-9">{{phonenumber}}</div>
+      </div>
+  </div>
+
+  <div class="item-details pl-lg-3">
+    <table>
+      <tbody>
+        <tr>
+          <th> {{#str}} items, local_ecommerce {{/str}} </th>
+          <th> {{#str}} unit_cost, local_ecommerce {{/str}} </th>
+          <th> {{#str}} quantity, local_ecommerce {{/str}} </th>
+          <th> {{#str}} discount, local_ecommerce {{/str}} </th>
+          <th> {{#str}} subtotal, local_ecommerce {{/str}} </th>
+        </tr>
+        {{#allitems}}
+          <tr>
+            <td>
+              <p class="m-0">{{itemname}}</p>
+              <span class="sub-txt">{{itemtype}}</span>
+            </td>
+            <td>₱ {{itemprice}}</td>
+            <td>{{quantity}}</td>
+            <td>₱ {{discount}}</td>
+            <td>₱ {{itemfinalprice}}</td>
+          </tr>
+        {{/allitems}}
+      </tbody>
+    </table>
+    <hr />
+  </div>
+  <div class="bill-total">
+     <div class="row justify-content-end pr-0 pr-lg-5">
+          <div class="col-10 col-lg-2 col-md-10 text-right"> Subtotal </div>
+         <div class="col-2 col-lg-2 col-md-2 text-left">₱ {{subtotal}}</div>
+      </div>
+
+    <div class="row justify-content-end pr-0 pr-lg-5">
+       <div class="col-10 col-lg-2 col-md-10 text-right"> {{#str}} vat, local_ecommerce {{/str}}</div>
+        <div class="col-2 col-lg-2 col-md-2 text-left">₱ {{vat}}</div>
+    </div>
+
+    <div class="row justify-content-end pr-0 pr-lg-5">
+       <div class="col-10 col-lg-3 col-md-10 text-right"> Shipping </div>
+            <div class="col-2 col-lg-2 col-md-2 text-left">₱ {{shipping}}</div>
+    </div>
+
+    <div class="row justify-content-end pr-0 pr-lg-5">
+      <div class="col-10 col-lg-2 col-md-10 text-right">  Discount </div>
+           <div class="col-2 col-lg-2 col-md-2 text-left">₱ {{discount}}</div>
+    </div>
+
+
+
+    <div class="row justify-content-end pr-0 pr-lg-5">
+       <div class="col-10 col-lg-2 col-md-10 text-right">  {{#str}} total, local_ecommerce {{/str}} </div>
+            <div class="col-2 col-lg-2 col-md-2 text-left font-weight-bold">₱ {{total}}</div>
+    </div>
+
+
+
+  </div>
+  <div class="bill-paid">
+    <span class="icon"
+      ><i class="fa fa-check-circle" aria-hidden="true"></i
+    ></span>
+    <span class="txt">Paid via  {{method}}</span>
+  </div>
+ <!--  <div class="bill-description">
+    <p> {{#str}} note, local_ecommerce {{/str}} </p>
+    <p> {{#str}} billing_note, local_ecommerce {{/str}} 
+      
+    </p>
+  </div> -->
+</div>

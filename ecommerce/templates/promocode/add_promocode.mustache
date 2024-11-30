@@ -1,0 +1,81 @@
+<div class="eventstatus modal create-promo" addpromocode tabindex="-1" role="dialog" id= "add-to-promocode" aria-labelledby="eventstatus" aria-hidden="true" >
+  <div class="modal-dialog-box" role="document">
+    <div class="modal-content p-0">
+      <div class="modal-top d-flex align-items-center justify-content-between">
+        <div class="header-text">
+          <p class="m-0">{{#str}} create_promo, local_ecommerce {{/str}}</p>
+        </div>
+        <button type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="mr-1">&times;</span>
+          <span>{{#str}} create_promo_modal_close, local_ecommerce {{/str}}</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <form action='/' class='add-promocode-details'>
+              <div class="selector text-right">
+                <select name="status">
+                  <option value="1" {{#status}} selected {{/status}}><i class="fa fa-circle"></i>Active</option>
+                  <option value="0" {{^status}} selected {{/status}}><i class="fa fa-circle"></i>Inactive</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="promoid">{{#str}} promocode, local_ecommerce {{/str}}</label>
+                <input type="text" name= "promoid" class="form-control required" value="{{promoid}}" id="promoid" />
+                <p>{{#str}} do_not_exceed, local_ecommerce {{/str}}</p>
+              </div>
+              <div class="row">
+                <div class="col-12 col-lg-7">
+                  <div class="form-group">
+                    <label for="type">{{#str}} type, local_ecommerce {{/str}}</label>
+                    <select class="form-control required" id="type" name="type">
+                      <option value="">Select Promotype</option>
+                      <option value="0" {{^type}} selected {{/type}}>Fixed</option>
+                      <option value="1" {{#type}} selected {{/type}}>Percent</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                  <div class="form-group">
+                    <label for="discount">{{#str}} discount_value, local_ecommerce {{/str}}</label>
+                    <input type="number" class="form-control required" value="{{discount}}" name="discount" id="discount" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <label>{{#str}} promo_expiration, local_ecommerce {{/str}}</label>
+                </div>
+                <div class="col-12 col-lg-7">
+                  <div class="form-group">
+                    <p for="startdate">{{#str}} start_date, local_ecommerce {{/str}} </p>
+                    <input type="date" name="startdate" value="{{startdate}}" class="form-control required" id="startdate" />
+                  </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                  <div class="form-group">
+                    <p for="enddate">{{#str}} end_date, local_ecommerce {{/str}}  </p>
+                    <input type="date" class="form-control" value="{{enddate}}" name="enddate" id="enddate" />
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center flex-wrap justify-content-end buttons" id="yui_3_17_2_1_1657945774549_38">
+                  <input type="hidden" name="id" value="{{id}}">
+                  <div class="add-new-product">
+                      <a href="javascript:void(0);" saveandnewpromocode="">{{#str}} save_and_add_new_promocode, local_ecommerce {{/str}}</a>
+                  </div>
+                  <div class="save" id="yui_3_17_2_1_1657945774549_37">
+                      <a href="javascript:void(0);" savepromocode="" id="yui_3_17_2_1_1657945774549_36">{{#str}} promocode_save, local_ecommerce {{/str}}</a>
+                  </div>
+                  <div class="discard">
+                      <a href="javascript:void(0);" discardaddnew="" data-dismiss="modal" aria-label="Close">{{#str}} promocode_discard, local_ecommerce {{/str}}</a>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

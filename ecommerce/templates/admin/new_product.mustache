@@ -1,0 +1,136 @@
+<div class="modal fade" id="add-to-product" tabindex="-1" role="dialog" aria-labelledby="add-product-modal-label"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content p-0">
+      <div class="d-flex justify-content-between add-product-header">
+        <h1>Add Product</h1>
+        <button type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="mr-1">&times;</span>
+          <span>{{#str}} close, local_ecommerce {{/str}}</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/" class="add-product-details">
+          <div class="row">
+            <div class="col-12 col-lg-5 col-sm-12 col-md-12">
+              <div class="form-group">
+                <label for="product-id">{{#str}} product_id, local_ecommerce {{/str}}</label>
+                <input type="text" class="form-control" disabled id="product-id" placeholder="{{ productid }}" />
+              </div>
+              <div class="form-group">
+                <label for="companyid">{{#str}} company, local_ecommerce {{/str}}<span>*</span></label>
+                <select class="form-control required" name="companyid" id="companyid">
+                  <option value="">Select Company</option>
+                  {{#allcompany}}
+                  <option value="{{ id }}" {{selected}}>{{ name }}</option>
+                  {{/allcompany}}
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="product-name">
+                 {{#str}} product_name, local_ecommerce {{/str}}
+                  <span>*</span>
+                </label>
+                <input type="text" class="form-control required" name="name" value="{{ name }}" id="product-name" placeholder=""
+                  maxlength="80" minlength="3" />
+              </div>
+              <!-- <div class="form-group">
+                <label for="product-type"> {{#str}} product_type, local_ecommerce {{/str}}<span>🛈</span></label>
+                <select class="form-control" name="type" id="product-type">
+                  <option value="">Select Type</option>
+                  {{#prodtype}}
+                  <option value="{{ id }}" {{selected}}>{{ name }}</option>
+                  {{/prodtype}}
+                </select>  
+              </div> -->
+              <div class="form-group">
+                <label for="Category">{{#str}} category, local_ecommerce {{/str}}<span>*</span></label>
+                <select class="form-control required" name="category" id="category">
+                  <option value="">Select Category</option>
+                  {{#categorytype}}
+                  <option value="{{ id }}" {{selected}}>{{ name }}</option>
+                  {{/categorytype}}
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="description">{{#str}} description, local_ecommerce {{/str}}</label>
+                <textarea class="form-control" name="description" id="description" rows="7" 
+                  >{{ description }}</textarea>
+              </div>
+            </div>
+            <div class="col-12 col-lg-7 col-sm-12 col-md-12">
+              <div class="product-img">
+                <h1 class="title"> {{#str}} product_image, local_ecommerce {{/str}}  &nbsp; &nbsp; &nbsp;</h1>
+                <div class="row" filemanager>
+                  {{#images}}
+                  {{> local_ecommerce/admin/fileselector }}
+                  {{/images}}
+                  {{> local_ecommerce/admin/fileselector }}
+                  <span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+                  <span><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <hr />
+                <div class="mt-5">
+                  <div class="add-product-view">
+                    <div class="form-group">
+                      <label for="apply-promocode">{{#str}} apply_promocode, local_ecommerce {{/str}}</label>
+                      <select class="form-control w-50" name="promocode" id="apply-promocode">
+                        <option value=""> {{#str}} available_promo_code, local_ecommerce {{/str}} </option>
+                        {{#promocode}}
+                        <option value="{{ id }}" {{selected}}>
+                          {{ promoid }}
+                        </option>
+                        {{/promocode}}
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-auto">
+                        <label for="">{{#str}} price, local_ecommerce {{/str}}</label>
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">P</div>
+                          </div>
+                          <input type="number" name="price" value="{{ price }}" class="form-control required" id=""
+                            placeholder="00.00" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <select class="chosen-select" name="relatedproducts" multiple>
+                      {{#allcourses}}
+                        <option value="{{id}}" {{selected}}>{{fullname}}</option>
+                      {{/allcourses}}
+                    </select>
+
+
+                    <!-- <div class="form-group">
+                      <label for="popular"><input type="checkbox" {{#popular}} checked
+                        {{/popular}} name="popular" id="popular" value="1" />
+                        Popular</label
+                      >
+                    </div> -->
+                  </div>
+                  <div class="d-flex align-items-center flex-wrap justify-content-end buttons">
+                    <input type="hidden" name="id" , value="{{ id }}" />
+                    <a href="javascript:void(0);" saveandnewproduct>
+                      <div class="add-new-product">
+                        {{#str}} save_and_add_new_product, local_ecommerce {{/str}}
+                      </div>
+                    </a>
+                    <a href="javascript:void(0);" saveproduct>
+                      <div class="save">{{#str}} save, local_ecommerce {{/str}}</div>
+                    </a>
+                    <a href="javascript:void(0);" discardaddnew data-dismiss="modal" aria-label="Close">
+                      <div class="discard">
+                       {{#str}} discard, local_ecommerce {{/str}} 
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

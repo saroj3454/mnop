@@ -1,0 +1,42 @@
+<div   class="modal conformationbox" tabindex="-1"   role="dialog" aria-labelledby="create-promo" aria-hidden="true" >
+  <div class="modal-body" deltype>
+    <div class="modal-dialog-box" role="document">
+      <div class="modal-content p-0">
+        <div
+          class="modal-top d-flex align-items-center justify-content-between"
+        >
+          <div class="header-text">
+            <p class="m-0">{{ heading }}</p>
+          </div>
+          <button type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="mr-1">&times;</span>
+            <span>{{#str}} delete_modal_product_close, local_ecommerce {{/str}}</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="deactivate-promo">
+            {{#subheading}}
+            <div class="heading">{{ subheading }}</div>
+            {{/subheading}} {{#description}}
+            <div class="peragraph">{{{description}}}</div>
+            {{/description}}
+            <div class="text-center">
+              <input type="hidden" itemid value="{{ itemid }}" />
+              <input type="hidden" action value="{{ action }}" />
+              <input type="hidden" data value="{{ data }}" />
+              <button type="button" confirmed class="primary-btn">{{#str}} delete_modal_yes, local_ecommerce {{/str}}</button>
+              <button
+                type="button"
+                class="secondary-btn"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                {{#str}} delete_modal_no, local_ecommerce {{/str}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class='col-6 col-lg-3 fileselector_container'>
+    <div class='fileselector {{#url}} active {{/url}} '>
+        <div class="add-more">
+            <input type="radio" id="" name="image" value="1" class='m-0'/>
+            <input type="file"/>
+            <input type="hidden" name="images"/>
+            <input type="hidden" name="imagesname" value="{{pathnamehash}}"/>
+            <div class='d-flex align-items-center justify-content-center flex-column h-50'>
+                <img src='{{#str}} pluginurl, local_ecommerce {{/str}}/assests/images/insertImage.png' alt=''/>
+                <span>Drop Your Image here, or Select
+                    <a href='javascript:void(0);'>Click to here</a>
+                </span>
+            </div>
+        </div>
+        <div class='selected'>
+            <div class='d-flex align-items-center justify-content-between'>
+                <div class='default'>
+                    <input type="radio" id="" name="default_image" {{selected}} value="0" class='m-0 default-image'/>
+                    <span>Default</span>
+                </div>
+                <div class='close'>
+                    <img src='{{#str}} pluginurl, local_ecommerce {{/str}}/assests/Icons/close.png' alt=''/>
+                </div>
+            </div>
+                <div class='d-flex align-items-center justify-content-center add-img'>
+                    {{#url}}
+                        <img selectedimage src='{{url}}' alt='' width="100%" height="100%"/>
+                    {{/url}}
+                    {{^url}}
+                        <img selectedimage src='{{#str}} pluginurl, local_ecommerce {{/str}}/assests/images/add-product.png' alt='' width="100%" height="100%" />
+                    {{/url}}
+                </div>
+        </div>
+    </div>
+</div>

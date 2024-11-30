@@ -1,0 +1,22 @@
+{{{ output_header }}}
+<div class="manage-product container">
+    <div>
+        {{{ output_blockregion_content }}}
+    </div>
+    <div class='d-flex align-items-center justify-content-end'>
+        <div class='buttons'>
+            <a href='javascript:void(0);' class='product-modal' id="model_addproduct" >+ {{#str}} add_product, local_ecommerce {{/str}}</a>
+            <a href='javascript:void(0);' class='product-modal' data-toggle="modal" data-target="#added-product">{{#str}} added_product, local_ecommerce {{/str}}</a>
+        </div>
+    </div>
+
+
+{{> local_ecommerce/admin/new_product }}
+{{> local_ecommerce/admin/view_product }}
+
+
+</div>
+
+
+
+{{{ output_footer }}}

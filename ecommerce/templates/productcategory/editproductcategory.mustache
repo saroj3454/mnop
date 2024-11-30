@@ -1,0 +1,83 @@
+<div
+  class="eventstatus modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="eventstatus"
+  aria-hidden="true"
+>
+  <div class="modal-dialog-box" role="document">
+    <div class="modal-content p-0">
+      <div class="modal-top text-right">
+        <button type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="mr-1">&times;</span>
+          <span>{{#str}} edit_product_categories_close, local_ecommerce {{/str}}</span>
+        </button>
+      </div>
+      <div class="modal-body active-popup" editptype>
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="w-100 my-3">
+              <label>{{#str}} edit_product_name, local_ecommerce {{/str}}</label>
+              
+              <input
+              name="name"
+                type="text"
+                placeholder="{{#str}} edit_product_enter_category_name, local_ecommerce {{/str}}"
+                class="w-100 px-2 required"
+                value="{{name}}"
+              />
+            </div>
+            <div class="w-100 my-3">
+              <label>Description</label>
+              
+              <textarea
+              name="description"
+                type="text"
+                placeholder="{{#str}} edit_product_description, local_ecommerce {{/str}}"
+                class="w-100 px-2"
+              >{{description}}</textarea>
+            </div>
+
+            <div>
+              <input type="hidden" name="id" value="{{id}}"/>
+              <button type="button" saveandadd class="add-new-promo">{{#str}} edit_product_save_and_new, local_ecommerce {{/str}}</button>
+              <button type="button" savedtype id="savedtype" class="save">{{#str}} edit_product_save, local_ecommerce {{/str}} </button>
+              <button
+                type="button"
+                class="discard"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                {{#str}} edit_product_discard, local_ecommerce {{/str}} 
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .add-new-promo,
+  .save,
+  .discard {
+    margin: 8px;
+    color: #fff;
+    outline: none;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 40px;
+  }
+  .add-new-promo {
+    background: #535353;
+  }
+
+  .save {
+    background: #b82025;
+  }
+
+  .discard {
+    background: #a3a3a3;
+  }
+</style>

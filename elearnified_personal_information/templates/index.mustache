@@ -1,0 +1,211 @@
+<style>
+	.form_personal_information .invalid-feedback{
+		display: none;
+	}
+</style>
+
+{{#userdata}}
+
+<div class="container" personalinformation>
+	<div id="personal-information">
+		<div class="order-md-1">
+			<form method="POST" class="form_personal_information" data-toggle="validator" autocomplete="off">
+				<div class="row">
+					<div class="col-12">
+						<h4 class="mb-15 heading">Personal Information</h4>
+					</div>
+
+					<div class="col-md-6 mb-15 parent-class">
+						<label for="firstName" class="label">First name</label>
+						<input type="text" value="{{firstname}}" class=" input required" id="firstName" name="firstname" placeholder=""  required>
+						<div class="invalid-feedback">
+							Valid first name is required.
+						</div>
+					</div>
+					<div class="col-md-6 mb-15 parent-class">
+						<label for="lastName" class="label">Surname</label>
+						<input type="text" class=" input required" id="lastName" name="lastname" placeholder="" value="{{lastname}}" required>
+						<div class="invalid-feedback">
+							Valid last name is required.
+						</div>
+					</div>
+					<div class="col-md-6 mb-15 parent-class">
+						<label for="dob" class="label">Date of Birth</label>
+						<div class="position-relative">
+							<div class="dob-container">
+								<div class="dob-wrap">
+									<label class="icon-img" for="dob">
+										<img src="{{{ config.wwwroot }}}/theme/elearnified/img/icons/cal.png" alt="" width="25px" height="25px" />
+									</label>
+										<input type="text"  class="bg-default required"
+										id="dob" name="dob" value='{{{eldob}}}' placeholder="DD/MM/YYYY"  readonly="true" required>
+								</div>
+							</div>
+							<div class="invalid-feedback" style="width: 100%;">
+									Your DOB is required.
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mb-15 parent-class">
+						<label for="gender" class="label">Gender</label>
+						<div>
+							<select class="custom-select input d-block w-100 required" name="gender" id="gender" required>Gender
+								<option value="">Select...</option>
+								{{{elgender}}}
+							</select>
+
+							<div class="invalid-feedback" style="width: 100%;">
+								Your gender is required.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h4 class="heading">Address</h4>
+					</div>
+					<div class="col-md-4 mb-15 parent-class">
+						<input type="text" class=" input required" id="houseno" name="houseno" placeholder="HOUSE NO." required value="{{elHouseno}}">
+						<div class="invalid-feedback">
+							House No is required.
+						</div>
+					</div>
+					<div class="col-md-8 mb-15 parent-class">
+						<input type="text" class=" input required" id="address" value="{{address}}"  name="address" placeholder="1234 Main St" required>
+
+						<div class="invalid-feedback">
+							 Address is required.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 mb-15 parent-class">
+						<label for="country" class="label">Country</label>
+						<select class="custom-select d-block input w-100 required" name="country" id="country" required>
+							{{{countrydata}}}
+						</select>
+						<div class="invalid-feedback">
+							Please select a valid country.
+						</div>
+					</div>
+					<div class="col-md-3 mb-15 parent-class">
+						<label for="state" class="label">State</label>
+						<input type="text" class=" input required" id="state" name="state" value="{{city}}"  placeholder="Enter State " required>
+
+						
+						<div class="invalid-feedback">
+							Please provide a valid state.
+						</div>
+					</div>
+					<div class="col-md-3 mb-15 parent-class">
+						<label for="zip" class="label">Zip</label>
+						<input type="text" class=" input required" name="zip1" id="zip1" placeholder="Enter ZIP" required value="{{elzip}}">
+						<div class="invalid-feedback">
+							Zip code required.
+						</div>
+					</div>
+					<div class="col-md-3 mb-15 parent-class">
+						<label for="zip" class="label">Blood Type</label>
+						<input type="text" class=" input required" name="landmark" id="landmark" placeholder="Enter Blood Type" required 	value="{{ellandmark}}" />
+						<div class="invalid-feedback">
+							Land Mark required.
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<h4 class="mb-15 parent-class heading">Contact Information</h4>
+				</div>
+				<div class="col-md-12 mb-15 parent-class">
+					<label for="dob" class="label">Email</label>
+					<div>
+						<input type="email" value="{{email}}" class="input {{required}}" {{readonly}}   id="email" name="email" placeholder="Enter Email" required />
+						<div class="invalid-feedback" style="width: 100%;">
+							Your Email is required.
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 mb-15 parent-class">
+					<label for="dob" class="label">Contact Number</label>
+					<div >
+						<input type="text" class=" input required" name="contact" id="contact"
+							placeholder="Enter Contact Number" required value="{{phone1}}">
+						<div class="invalid-feedback" style="width: 100%;">
+							Your contact number is required.
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 mb-15 parent-class">
+					<label for="dob" class="label">Organisation</label>
+					<div>
+
+						<select class="input {{required}}" name="organisation" id="organisation" {{disbledfield}} >
+							<option>
+							 		Select	Organisation
+							</option>
+								{{{elorganisation}}}
+						</select>
+						
+						<div class="invalid-feedback" style="width: 100%;">
+							Your Organisation is required.
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<h4 class="heading">Password management</h4>
+				</div>
+				<div class="col-md-12 mb-15 parent-class">
+					<label for="oldpassword" class="label">Old Password</label>
+					<div >
+						<input type="password" class=" input"   name="oldpassword" id="oldpassword"
+							placeholder="Enter Old Password">
+						<div class="invalid-feedback" style="width: 100%;">
+							Your Old Password is required.
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 mb-15 parent-class">
+					<label for="oldpassword" class="label">New Password</label>
+					<div >
+						<input type="password" class=" input" name="newpassword" id="newpassword"
+							placeholder="Enter New Paasword">
+						<div class="invalid-feedback" style="width: 100%;">
+							Your New Password is required.
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<button class="btn btn-primary btn-lg btn-block mt-5" type="button" id="submit">SUBMIT</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{{/userdata}}
+
+
+
+
+
+
+
+<div class="modal fade" id="update-success" tabindex="-1" role="dialog" aria-labelledby="forgot-confirmTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center mb-5">
+        <div class="mb-15 d-flex align-items-center justify-content-center">
+            <div class="success-circle">
+              <img src="{{{ config.wwwroot }}}/theme/elearnified/images/check-icon.png" alt="" width="50px" height="50px" />
+            </div>
+        </div>
+        <h1 class="mt-3 success-txt">Updated Sucessfully</h1>
+
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="modal fade" id="add-to-product" tabindex="-1" role="dialog" aria-labelledby="add-product-modal-label"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content p-0">
+      <div class="d-flex justify-content-between add-product-header">
+        <h1 style="color:#fff">Import Product</h1>
+        <button type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="mr-1">&times;</span>
+          <span>{{#str}} close, local_ecommerce {{/str}}</span>
+        </button>
+      </div>
+        <div class="modal-body">
+          <div class="import-product-details" method="post">
+            <div class="row">
+                <div class='col-12 col-lg-3 fileselector_container'>
+                <div class='fileselector {{#url}} active {{/url}} '>
+                <div class="add-more">
+                  <!-- <input type="radio" id="" name="image" value="1" class='m-0'/> -->
+                  <input type="file"/>
+                  <input type="hidden" name="images"/>
+                  <input type="hidden" name="imagesname" value="{{pathnamehash}}"/>
+                  <div class='d-flex align-items-center justify-content-center flex-column h-50'>
+                    <img src='{{#str}} pluginurl, local_ecommerce {{/str}}/assests/images/insertImage.png' alt=''/>
+                    <span>Drop Your CSV file here, or Select
+                      <a href='javascript:void(0);'>Click to here</a>
+                    </span>
+                  </div>
+                </div>
+                <div class='selected'>
+                  <div class='d-flex align-items-center justify-content-center add-img'>
+                      {{^url}}
+                          <p selectedimage src='' alt='' width="100%" height="100%"></p>
+                      {{/url}}
+                  </div>
+          </div>
+      </div>
+    </div>
+      <div class="col-12 col-lg-9">
+        <div>
+          <input importproduct class="btn btn-info btncreate-product" value="Save">
+          
+        </div>
+        <div class="import-error-msg" style="font-color:red;">
+          
+        </div>
+
+
+      </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,95 @@
+<div
+  class="eventstatus modal create-promo"
+  tabindex="-1"
+  role="dialog"
+  id= "model_addpromocode"
+  aria-labelledby="eventstatus"
+  aria-hidden="true"
+>
+  <div class="modal-dialog-box" role="document">
+    <div class="modal-content p-0">
+      <div class="modal-top d-flex align-items-center justify-content-between">
+        <div class="header-text">
+          <p class="m-0">Create Promo</p>
+        </div>
+        <button type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="mr-1">&times;</span>
+          <span>Close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="selector text-right">
+              <select>
+                <option value="1"><i class="fa fa-circle"></i>Active</option>
+                <option value="2"><i class="fa fa-circle"></i>Deactive</option>
+              </select>
+            </div>
+            <form>
+              <div class="form-group">
+                <label for="email">Promo ID</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  name="email"
+                />
+              </div>
+              <div class="row">
+                <div class="col-12 col-lg-7">
+                  <label for="email">Promo Type</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter email"
+                    name="email"
+                  />
+                </div>
+                <div class="col-12 col-lg-5">
+                  <label for="email">Discount Value </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter email"
+                    name="email"
+                  />
+                </div>
+              </div>
+
+              <div class="dates">
+                <p>Promo Expiration</p>
+                <div class="row">
+                  <div class="col-12 col-lg-5">
+                    <div class="date-pannel">
+                      <input type="number" placeholder="01" />
+                      <input type="number" placeholder="01" />
+                      <input type="number" placeholder="2022" />
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-2 text-center"><p>~</p></div>
+                  <div class="col-12 col-lg-5">
+                    <div class="date-pannel">
+                      <input type="number" placeholder="01" />
+                      <input type="number" placeholder="01" />
+                      <input type="number" placeholder="2022" />
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="text-center">
+                  <button type="button" class="darkbutton">Save and add new Promo</button>
+                  <button type="button" class="save">Save</button>
+                  <button type="button" class="discard">Discard</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

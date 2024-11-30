@@ -1,0 +1,165 @@
+[18-Aug-2022 02:41:14 UTC] PHP Notice:  Undefined variable: CFG in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:14 UTC] PHP Notice:  Trying to get property 'dirroot' of non-object in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:14 UTC] PHP Warning:  include(/local/customhomepage/classes/login.php): failed to open stream: No such file or directory in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:14 UTC] PHP Warning:  include(): Failed opening '/local/customhomepage/classes/login.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Login' not found in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 3
+[18-Aug-2022 02:41:19 UTC] PHP Notice:  Undefined variable: CFG in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:19 UTC] PHP Notice:  Trying to get property 'dirroot' of non-object in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:19 UTC] PHP Warning:  include(/local/customhomepage/classes/login.php): failed to open stream: No such file or directory in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:19 UTC] PHP Warning:  include(): Failed opening '/local/customhomepage/classes/login.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 2
+[18-Aug-2022 02:41:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Login' not found in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 3
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Warning:  include(/home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/login.php): failed to open stream: No such file or directory in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 3
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Warning:  include(): Failed opening '/home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/login.php' for inclusion (include_path='/home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/pear:.:/opt/alt/php73/usr/share/pear') in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 3
+[18-Aug-2022 08:12:40 Asia/Kolkata] Default exception handler: Exception - Class 'Login' not found Debug: 
+Error code: generalexceptionmessage
+* line 4 of /local/customhomepage/login.php: Error thrown
+
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 44
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 92
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 137
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 211
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 231
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 251
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 272
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 302
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 100
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 362
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 485
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 505
+[18-Aug-2022 08:12:40 Asia/Kolkata] PHP Notice:  The page layout file did not call $OUTPUT->doctype()<ul style="text-align: left" data-rel="backtrace"><li>line 1322 of /lib/outputrenderers.php: call to debugging()</li><li>line 2823 of /lib/outputrenderers.php: call to core_renderer->header()</li><li>line 1945 of /lib/setuplib.php: call to core_renderer->fatal_error()</li><li>line 390 of /lib/setuplib.php: call to bootstrap_renderer->__call()</li><li>line ? of unknownfile: call to default_exception_handler()</li></ul> in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 3244
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Warning:  include(/home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/login.php): failed to open stream: No such file or directory in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 3
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Warning:  include(): Failed opening '/home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/login.php' for inclusion (include_path='/home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/pear:.:/opt/alt/php73/usr/share/pear') in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/login.php on line 3
+[18-Aug-2022 08:14:32 Asia/Kolkata] Default exception handler: Exception - Class 'Login' not found Debug: 
+Error code: generalexceptionmessage
+* line 4 of /local/customhomepage/login.php: Error thrown
+
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 44
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 92
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 137
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 211
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 231
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 251
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 272
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 302
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 100
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 362
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 485
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 505
+[18-Aug-2022 08:14:32 Asia/Kolkata] PHP Notice:  The page layout file did not call $OUTPUT->doctype()<ul style="text-align: left" data-rel="backtrace"><li>line 1322 of /lib/outputrenderers.php: call to debugging()</li><li>line 2823 of /lib/outputrenderers.php: call to core_renderer->header()</li><li>line 1945 of /lib/setuplib.php: call to core_renderer->fatal_error()</li><li>line 390 of /lib/setuplib.php: call to bootstrap_renderer->__call()</li><li>line ? of unknownfile: call to default_exception_handler()</li></ul> in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 3244
+[18-Aug-2022 08:16:18 Asia/Kolkata] Default exception handler: Exception - Call to undefined method Login::htmlheader() Debug: 
+Error code: generalexceptionmessage
+* line 5 of /local/customhomepage/classes/Login.php: Error thrown
+* line 4 of /local/customhomepage/login.php: call to Login->__construct()
+
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 44
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 92
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 137
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 211
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 231
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 251
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 272
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 302
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 100
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 362
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 485
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 505
+[18-Aug-2022 08:16:18 Asia/Kolkata] PHP Notice:  The page layout file did not call $OUTPUT->doctype()<ul style="text-align: left" data-rel="backtrace"><li>line 1322 of /lib/outputrenderers.php: call to debugging()</li><li>line 2823 of /lib/outputrenderers.php: call to core_renderer->header()</li><li>line 1945 of /lib/setuplib.php: call to core_renderer->fatal_error()</li><li>line 390 of /lib/setuplib.php: call to bootstrap_renderer->__call()</li><li>line ? of unknownfile: call to default_exception_handler()</li></ul> in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 3244
+[18-Aug-2022 08:17:52 Asia/Kolkata] Default exception handler: Exception - Call to undefined method Login::htmlheader() Debug: 
+Error code: generalexceptionmessage
+* line 5 of /local/customhomepage/classes/Login.php: Error thrown
+* line 4 of /local/customhomepage/login.php: call to Login->__construct()
+
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 44
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 92
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 137
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 211
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 231
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 251
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 272
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 302
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 100
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 362
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 485
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 505
+[18-Aug-2022 08:17:52 Asia/Kolkata] PHP Notice:  The page layout file did not call $OUTPUT->doctype()<ul style="text-align: left" data-rel="backtrace"><li>line 1322 of /lib/outputrenderers.php: call to debugging()</li><li>line 2823 of /lib/outputrenderers.php: call to core_renderer->header()</li><li>line 1945 of /lib/setuplib.php: call to core_renderer->fatal_error()</li><li>line 390 of /lib/setuplib.php: call to bootstrap_renderer->__call()</li><li>line ? of unknownfile: call to default_exception_handler()</li></ul> in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/weblib.php on line 3244
+[18-Aug-2022 08:20:13 Asia/Kolkata] Default exception handler: Exception - Call to undefined method Login::htmlheader() Debug: 
+Error code: generalexceptionmessage
+* line 5 of /local/customhomepage/classes/Login.php: Error thrown
+* line 4 of /local/customhomepage/login.php: call to Login->__construct()
+
+[18-Aug-2022 08:21:02 Asia/Kolkata] Default exception handler: Exception - Call to undefined method Login::htmlheader() Debug: 
+Error code: generalexceptionmessage
+* line 5 of /local/customhomepage/classes/Login.php: Error thrown
+* line 4 of /local/customhomepage/login.php: call to Login->__construct()
+
+[18-Aug-2022 08:21:08 Asia/Kolkata] PHP Notice:  Undefined variable: CFG in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Login.php on line 32
+[18-Aug-2022 08:21:08 Asia/Kolkata] PHP Notice:  Trying to get property 'dirroot' of non-object in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Login.php on line 32
+[18-Aug-2022 08:21:08 Asia/Kolkata] PHP Warning:  include(/local/customhomepage/classes/Homepage.php): failed to open stream: No such file or directory in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Login.php on line 32
+[18-Aug-2022 08:21:08 Asia/Kolkata] PHP Warning:  include(): Failed opening '/local/customhomepage/classes/Homepage.php' for inclusion (include_path='/home/eire9d2tu5pr/public_html/staging.ekalovya.com/lib/pear:.:/opt/alt/php73/usr/share/pear') in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Login.php on line 32
+[18-Aug-2022 08:21:08 Asia/Kolkata] Default exception handler: Exception - Class 'Homepage' not found Debug: 
+Error code: generalexceptionmessage
+* line 33 of /local/customhomepage/classes/Login.php: Error thrown
+* line 6 of /local/customhomepage/classes/Login.php: call to Login->loginpagemenu()
+* line 4 of /local/customhomepage/login.php: call to Login->__construct()
+
+[18-Aug-2022 08:22:41 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Login.php on line 34
+[18-Aug-2022 08:22:41 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 44
+[23-Aug-2022 23:00:02 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 36
+[23-Aug-2022 23:00:02 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 46
+[23-Aug-2022 23:00:02 Asia/Kolkata] PHP Deprecated:  Non-static method moodleform::display() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 46
+[23-Aug-2022 23:00:02 Asia/Kolkata] Default exception handler: Exception - Using $this when not in object context Debug: 
+Error code: generalexceptionmessage
+* line 984 of /lib/formslib.php: Error thrown
+* line 46 of /local/customhomepage/classes/Register.php: call to moodleform::display()
+* line 7 of /local/customhomepage/classes/Register.php: call to Register->loginbodycontent()
+* line 4 of /local/customhomepage/register.php: call to Register->__construct()
+
+[23-Aug-2022 23:00:02 Asia/Kolkata] PHP Fatal error:  Cannot declare class Homepage, because the name is already in use in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 1
+[23-Aug-2022 23:02:24 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 36
+[23-Aug-2022 23:02:24 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 46
+[23-Aug-2022 23:02:24 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 25
+[23-Aug-2022 23:02:24 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 26
+[23-Aug-2022 23:02:24 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::homefooter() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 70
+[23-Aug-2022 23:02:24 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 526
+[23-Aug-2022 23:04:24 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 36
+[23-Aug-2022 23:04:24 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 46
+[23-Aug-2022 23:04:24 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 25
+[23-Aug-2022 23:04:24 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 26
+[23-Aug-2022 23:04:24 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::homefooter() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 70
+[23-Aug-2022 23:04:24 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 526
+[23-Aug-2022 23:04:35 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 36
+[23-Aug-2022 23:04:35 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 46
+[23-Aug-2022 23:04:35 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 25
+[23-Aug-2022 23:04:35 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 26
+[23-Aug-2022 23:04:35 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::homefooter() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 70
+[23-Aug-2022 23:04:35 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 526
+[23-Aug-2022 23:04:49 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 36
+[23-Aug-2022 23:04:49 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 46
+[23-Aug-2022 23:04:49 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 25
+[23-Aug-2022 23:04:49 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 26
+[23-Aug-2022 23:04:49 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::homefooter() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 70
+[23-Aug-2022 23:04:49 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 526
+[23-Aug-2022 23:04:54 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 36
+[23-Aug-2022 23:04:54 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 46
+[23-Aug-2022 23:04:54 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 25
+[23-Aug-2022 23:04:54 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 26
+[23-Aug-2022 23:04:54 Asia/Kolkata] Default exception handler: Coding error detected, it must be fixed by a programmer: PHP catchable fatal error Debug: Object of class Registerform could not be converted to string
+Error code: codingerror
+* line 428 of /lib/setuplib.php: coding_exception thrown
+* line 47 of /local/customhomepage/classes/Register.php: call to default_error_handler()
+* line 7 of /local/customhomepage/classes/Register.php: call to Register->loginbodycontent()
+* line 4 of /local/customhomepage/register.php: call to Register->__construct()
+
+[23-Aug-2022 23:04:54 Asia/Kolkata] PHP Fatal error:  Cannot declare class Homepage, because the name is already in use in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 1
+[23-Aug-2022 23:06:47 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::headertopbar() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 36
+[23-Aug-2022 23:06:47 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 46
+[23-Aug-2022 23:06:47 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 25
+[23-Aug-2022 23:06:47 Asia/Kolkata] PHP Notice:  Undefined variable: attributes in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Registerform.php on line 26
+[23-Aug-2022 23:06:47 Asia/Kolkata] PHP Deprecated:  Non-static method Homepage::homefooter() should not be called statically in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Register.php on line 70
+[23-Aug-2022 23:06:47 Asia/Kolkata] PHP Notice:  Undefined variable: html in /home/eire9d2tu5pr/public_html/staging.ekalovya.com/local/customhomepage/classes/Homepage.php on line 526
